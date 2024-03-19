@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="273" height="64.998" viewBox="-31.006 0 378.012 90">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 30px;
+        fill: #0d010d;
+        text-anchor: middle;
+        font-family: "Bodoni MT";
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect width="316" height="90"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#clip-path)">
+    <text id="OFERTAS" class="cls-1" transform="translate(158.491 61.778) scale(2.079)"><tspan x="0">OFERTAS</tspan></text>
+    <text id="Lorem_Ipsum" data-name="Lorem Ipsum" class="cls-1" x="231" y="201"><tspan x="231">Lorem Ipsum</tspan></text>
+  </g>
+</svg>
