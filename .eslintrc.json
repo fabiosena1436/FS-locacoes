@@ -15,6 +15,7 @@
         "react"
     ],
     "rules": {
-        "keyword-spacing": "off"
+        "keyword-spacing": "off",
+        "react/no-deprecated": "off"
     }
 }

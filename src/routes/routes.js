@@ -7,6 +7,7 @@ import Register from "../containers/Register";
 import Home from "../containers/Home";
 import PrivateRoouter from "./private-route";
 import Products from "../containers/Products";
+import Cart from "../containers/Cart";
 
 function Routes() {
     return (
@@ -16,6 +17,7 @@ function Routes() {
                 <Route component={Register} path="/cadastro" />
                 <PrivateRoouter exact component={Home} path="/" />
                 <PrivateRoouter  component={Products} path="/produtos" />
+                <PrivateRoouter  component={Cart} path="/carrinho" />
             </Switch>
         </Router>
     )
