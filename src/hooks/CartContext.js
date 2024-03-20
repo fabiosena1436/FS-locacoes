@@ -7,6 +7,14 @@ const CartContext = createContext({})
 export const CartProvider = ({ children }) => {
     const [cartProducts, setcartProducts] = useState([])
 
+    const updateLocalStorage = async (products) => {
+        await localStorage.setItem(
+            'dadosLocal:cartInfo',
+            JSON.stringify(products)
+        )
+
+    }
+
     const putProductInCart = async product => {
         const cartIndex = cartProducts.findIndex(prd => prd.id === product.id)
 
@@ -23,16 +31,16 @@ export const CartProvider = ({ children }) => {
             newCartProducts = [...cartProducts, product]
             setcartProducts(newCartProducts)
         }
-        await localStorage.setItem('dadosLocal:cartInfo', JSON.stringify(newCartProducts)
-        )
+        await updateLocalStorage (newCartProducts)
+        
     }
 
     const deletPruducts = async productid => {
         const newCart = cartProducts.filter(product => product.id !== productid)
 
         setcartProducts(newCart)
-        await localStorage.setItem('dadosLocal:cartInfo', JSON.stringify(newCart)
-        )
+        await updateLocalStorage(newCart)
+        
     }
 
     const increaseProcudts = async productid => {
@@ -42,8 +50,7 @@ export const CartProvider = ({ children }) => {
 
         setcartProducts(newCart)
 
-        await localStorage.setItem('dadosLocal:cartInfo', JSON.stringify(newCart)
-        )
+        await updateLocalStorage(newCart)
     }
 
     const decreaseProcudts = async productid => {
@@ -57,9 +64,8 @@ export const CartProvider = ({ children }) => {
             })
             setcartProducts(newCart)
 
-            await localStorage.setItem('dadosLocal:cartInfo', JSON.stringify(newCart)
-            )
-        }else{
+            await updateLocalStorage(newCart)
+        } else {
             deletPruducts(productid)
         }
     }
