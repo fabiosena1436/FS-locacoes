@@ -1,7 +1,8 @@
 import React from "react";
 
-import { Container } from './styles'
-import { CartItems, HomeCarousel } from "../../components";
+import { CartItems, HomeCarousel, CartResume } from "../../components";
+import { Container, Wrapper } from './styles'
+
 
 
 
@@ -9,7 +10,12 @@ function Cart() {
     return (
         <Container>
             <HomeCarousel />
-            <CartItems/>
+
+            <Wrapper>
+                <CartItems />
+                <CartResume />
+            </Wrapper>
+
         </Container>)
 }
 
