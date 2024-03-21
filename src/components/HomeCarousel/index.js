@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import ImageSlid from '../../assets/home-Header.svg'
 import {
     SliderConatainer,
-    ImageSlidev
+    ImageSlidev,
 } from './styles'
 
 export function HomeCarousel() {
@@ -20,20 +20,22 @@ export function HomeCarousel() {
     };
 
     return (
-        <Slider {...settings}>
-            <SliderConatainer>
-                <ImageSlidev src={ImageSlid} alt="imagem home" />
-            </SliderConatainer>
-            <SliderConatainer>
-                <ImageSlidev src={ImageSlid} alt="imagem home" />
-            </SliderConatainer>
-            <SliderConatainer>
-                <ImageSlidev src={ImageSlid} alt="imagem home" />
-            </SliderConatainer>
-            <SliderConatainer>
-                <ImageSlidev src={ImageSlid} alt="imagem home" />
-            </SliderConatainer>
-        </Slider>
+        <div style={{ width: '80%', margin: '0 auto' }}>
+            <Slider {...settings}>
+                <SliderConatainer>
+                    <ImageSlidev src={ImageSlid} alt="imagem home" />
+                </SliderConatainer>
+                <SliderConatainer>
+                    <ImageSlidev src={ImageSlid} alt="imagem home" />
+                </SliderConatainer>
+                <SliderConatainer>
+                    <ImageSlidev src={ImageSlid} alt="imagem home" />
+                </SliderConatainer>
+                <SliderConatainer>
+                    <ImageSlidev src={ImageSlid} alt="imagem home" />
+                </SliderConatainer>
+            </Slider>
+        </div>
     );
 }
 
