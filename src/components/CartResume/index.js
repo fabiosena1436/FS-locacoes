@@ -6,6 +6,7 @@ import { Container } from './styles'
 import { Button } from "../Button";
 import formatCurrency from '../../utils/formatCurrency'
 import api from '../../services/api';
+import { toast } from "react-toastify";
 
 
 export function CartResume() {
@@ -28,7 +29,14 @@ export function CartResume() {
             return { id: product.id, quantity: product.quantity }
         })
 
-        await api.post('orders', { product: order })
+
+        await toast.promise( api.post('orders', { products: order }),{
+            pending:'Realizando seu pedido...',
+            success:'Pedido realizado com sucesso.',
+            error: 'Falha ao tentar realizar o seu pedido, tente novamente.'
+        })
+
+       
     }
 
 
