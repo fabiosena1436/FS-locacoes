@@ -56,7 +56,7 @@ export function OffersCarousel() {
                             <Image src={product.url} alt="foto do produto" />
                             <p> {product.name}</p>
                             <p> {product.formatedPrice}</p>
-                            <Button>Peça agora</Button>
+                            <Button>Adicionar ao carrinho</Button>
                         </ContainerItens>
 
                     ))

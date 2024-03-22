@@ -74,6 +74,6 @@ p{
 
 export const SectionHeader = styled.div`
   position: relative;
-  min-height: 50px;
+  min-height: 40px;
   background-color: #D77424;
 `;

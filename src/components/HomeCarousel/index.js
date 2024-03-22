@@ -4,6 +4,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import ImageSlid from '../../assets/home-Header.svg'
 import ImageSlid1 from '../../assets/home-Header-1.svg'
+import ImageSlid2 from '../../assets/home-Header-2.svg'
+import ImageSlid3 from '../../assets/home-Header-3.svg'
 import {
     SliderConatainer,
     ImageSlidev,
@@ -30,10 +32,10 @@ export function HomeCarousel() {
                     <ImageSlidev src={ImageSlid1} alt="imagem home" />
                 </SliderConatainer>
                 <SliderConatainer>
-                    <ImageSlidev src={ImageSlid} alt="imagem home" />
+                    <ImageSlidev src={ImageSlid2} alt="imagem home" />
                 </SliderConatainer>
                 <SliderConatainer>
-                    <ImageSlidev src={ImageSlid} alt="imagem home" />
+                    <ImageSlidev src={ImageSlid3} alt="imagem home" />
                 </SliderConatainer>
             </Slider>
         </div>

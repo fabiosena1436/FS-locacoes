@@ -28,15 +28,16 @@ export const Container = styled.div`
   }
 `;
 
-export const CategoryImg = styled.img``;
+export const CategoryImg = styled.img`
+width: 15vw;
+`;
 
 export const ContainerItens = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #ffff;
-  padding: 2rem;
+  padding: 20px;
   border-radius: 10px;
-  /* border: .2rem solid #000000; */
   transition: 0.5s ease;
 
   &:hover {
