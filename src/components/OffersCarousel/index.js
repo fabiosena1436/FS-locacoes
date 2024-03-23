@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 
 import Offers from '../../assets/OFERTAS.svg'
+import Cart from '../../assets/carrinho.svg'
 import api from '../../services/api'
 import formatCurrency from "../../utils/formatCurrency";
 import {
@@ -10,6 +11,7 @@ import {
     CategoryImg,
     ContainerItens,
     Image,
+    ImageCart,
     Button
 } from './styles'
 import Carousel from 'react-elastic-carousel'
@@ -44,7 +46,7 @@ export function OffersCarousel() {
     return (
         <Container>
             <Divisory></Divisory>
-            <CategoryImg src={Offers} alt="logo oferta" />
+            <CategoryImg src={Offers} alt="logo destaque" />
 
             <Carousel itemsToShow={5} style={{ width: '90%' }}
                 breakPoints={breakPoints}>
@@ -56,7 +58,23 @@ export function OffersCarousel() {
                             <Image src={product.url} alt="foto do produto" />
                             <p> {product.name}</p>
                             <p> {product.formatedPrice}</p>
-                            <Button>Adicionar ao carrinho</Button>
+                            <Button>Alugar <ImageCart src={Cart} alt="Carrinho de compra" /></Button>
+                        </ContainerItens>
+
+                    ))
+                }
+            </Carousel>
+            <Carousel itemsToShow={5} style={{ width: '90%' }}
+                breakPoints={breakPoints}>
+                {
+                    offers &&
+                    offers.map(product => (
+
+                        <ContainerItens key={product.id}>
+                            <Image src={product.url} alt="foto do produto" />
+                            <p> {product.name}</p>
+                            <p> {product.formatedPrice}</p>
+                            <Button>Alugar <ImageCart src={Cart} alt="Carrinho de compra" /></Button>
                         </ContainerItens>
 
                     ))

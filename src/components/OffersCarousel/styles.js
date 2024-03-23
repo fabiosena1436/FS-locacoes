@@ -35,7 +35,12 @@ export const Container = styled.div`
   }
 `;
 
-export const CategoryImg = styled.img``;
+export const CategoryImg = styled.img`
+width:15%;
+`;
+export const ImageCart = styled.img`
+width: 10%;
+`;
 
 export const ContainerItens = styled.div`
   display: flex;
@@ -77,6 +82,11 @@ export const Button = styled.button`
   text-align: center;
   color: #ffff;
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 
   &:hover {
     opacity: 0.7;

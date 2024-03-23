@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="99.75" height="25.5" viewBox="0 0 133 34">
+<svg xmlns="http://www.w3.org/2000/svg" width="99.75" height="25.5" viewBox="0 0 133 34">
   <defs>
     <style>
       .cls-1 {
@@ -9,6 +9,5 @@
       }
     </style>
   </defs>
-  <image id="Plano_de_Fundo" data-name="Plano de Fundo" width="133" height="34" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAaCAYAAABByvnlAAAAVElEQVRoge3RQQHAQAwEobT+Pe/Z4DFY4Nu2C+OvwlIIphBMIZhCMIVgCsEUgikEUwimEEwhmEIwhWAKwRSCKQRTCKYQTCGYQjCFYArBFIIpRHJ3D5B6BDA2Kc4AAAAAAElFTkSuQmCC"/>
   <text id="Destaques" class="cls-1" x="65" y="23"><tspan x="65">Destaques</tspan></text>
 </svg>

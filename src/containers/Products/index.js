@@ -1,16 +1,34 @@
 import React, { useEffect, useState } from "react";
 
-import { Container, CategoryButton, CategoriesMenu, ProductsContainer } from './styles'
+import PropTypes from "prop-types";
+
+import {
+    Container,
+    CategoryButton,
+    CategoriesMenu,
+    ProductsContainer
+} from './styles'
+
+
 import ProductsCarousel from "../../components/HomeCarousel";
 import api from '../../services/api'
 import formatCurrency from '../../utils/formatCurrency'
-import {CardProduct} from "../../components/index";
+import { CardProduct } from "../../components/index";
 
-function Products() {
+function Products({ location: { state } }) {
+
+    let categoryId = 0
+    if (state?.categoryId) {
+        categoryId = state.categoryId
+    }
+
+
+
+
     const [categories, setCategories] = useState([])
     const [products, setProducts] = useState([])
     const [filteredProducts, setFilteredProducts] = useState([])
-    const [activeCategory, setactiveCategory] = useState([0])
+    const [activeCategory, setactiveCategory] = useState(categoryId)
 
     useEffect(() => {
         async function loadCategories() {
@@ -65,6 +83,10 @@ function Products() {
             </ProductsContainer>
         </Container >
     )
+}
+
+Products.propTypes = {
+    location: PropTypes.object
 }
 
 export default Products

@@ -4,7 +4,7 @@ export const ContainerButton = styled.button`
   width: 182.81px;
   height: 36.129px;
   flex-shrink: 0;
-  background-color: #2A4E5C;
+  background-color: #fa4e3c;
   color: #eee;
   text-align: center;
   font-family: Poppins;
@@ -12,7 +12,7 @@ export const ContainerButton = styled.button`
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
   cursor:pointer;
 
