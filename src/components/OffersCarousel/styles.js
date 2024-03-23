@@ -71,7 +71,7 @@ export const Image = styled.img`
 `;
 export const Button = styled.button`
   margin-top: 16px;
-  background-color: #fa4e3c;
+  background-color:  #fa4e3c;
   border: none;
   border-radius: 8px;
   height: 50px;

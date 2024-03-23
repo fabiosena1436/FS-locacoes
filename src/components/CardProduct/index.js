@@ -1,11 +1,11 @@
 import React from "react";
 
 import { useCart } from "../../hooks/CartContext";
-
+import Cart from '../../assets/carrinho.svg'
 import PropTypes from "prop-types";
 import { Button } from '../Button';
 
-import { Container, Image, ProductName, ProductPrice } from './styles'
+import { Container, Image, ProductName, ProductPrice, ImageCart, } from './styles'
 
 export function CardProduct({ product }) {
     const { putProductInCart } = useCart()
@@ -15,7 +15,7 @@ export function CardProduct({ product }) {
             <div>
                 <ProductName>{product.name}</ProductName>
                 <ProductPrice>{product.formatedPrice}</ProductPrice>
-                <Button onClick={() => putProductInCart(product)} >Adicionar</Button>
+                <Button onClick={() => putProductInCart(product)} >Adicionar <ImageCart src={Cart} alt="Carrinho de compra" /></Button>
             </div>
         </Container>
     )

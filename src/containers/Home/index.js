@@ -11,6 +11,7 @@ function Home() {
             <HomeCarousel />
             <CategoryCarousel />
             <OffersCarousel />
+         
         </Container>)
 }
 

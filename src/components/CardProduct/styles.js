@@ -22,6 +22,10 @@ border-radius: 10px;
 
 `
 
+export const ImageCart = styled.img`
+width: 10%;
+`;
+
 export const ProductName = styled.p`
 font-style: normal;
 font-weight: normal;

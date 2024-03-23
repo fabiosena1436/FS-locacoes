@@ -23,4 +23,9 @@ opacity: 0.8;
   &:active{
     opacity: 0.6;
   }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 `

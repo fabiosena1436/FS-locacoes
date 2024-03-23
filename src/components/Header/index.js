@@ -5,7 +5,7 @@ import { useUser } from "../../hooks/UserContext";
 
 import Person from '../../assets/admin.svg'
 import Cart from '../../assets/carrinho.svg'
-import Logo from '../../assets/logo2.svg'
+import Logo from '../../assets/logo1.svg'
 import {
     Container,
     ContainerLeft,

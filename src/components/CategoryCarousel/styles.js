@@ -32,6 +32,7 @@ export const Container = styled.div`
 
 export const CategoryImg = styled.img`
 width: 15vw;
+margin-top: 40px;
 `;
 
 export const ContainerItens = styled.div`
