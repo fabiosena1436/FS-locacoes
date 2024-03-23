@@ -23,21 +23,23 @@ export function HomeCarousel() {
     };
 
     return (
-        <div style={{ width: '80%', margin: '0 auto' }}>
-            <Slider {...settings}>
-                <SliderConatainer>
-                    <ImageSlidev src={ImageSlid} alt="imagem home" />
-                </SliderConatainer>
-                <SliderConatainer>
-                    <ImageSlidev src={ImageSlid1} alt="imagem home" />
-                </SliderConatainer>
-                <SliderConatainer>
-                    <ImageSlidev src={ImageSlid2} alt="imagem home" />
-                </SliderConatainer>
-                <SliderConatainer>
-                    <ImageSlidev src={ImageSlid3} alt="imagem home" />
-                </SliderConatainer>
-            </Slider>
+        <div style={{width:'100vw',backgroundColor:'#ffffff'}}>
+            <div style={{ width: '80%', margin: '0 auto'}}>
+                <Slider {...settings}>
+                    <SliderConatainer>
+                        <ImageSlidev src={ImageSlid} alt="imagem home" />
+                    </SliderConatainer>
+                    <SliderConatainer>
+                        <ImageSlidev src={ImageSlid1} alt="imagem home" />
+                    </SliderConatainer>
+                    <SliderConatainer>
+                        <ImageSlidev src={ImageSlid2} alt="imagem home" />
+                    </SliderConatainer>
+                    <SliderConatainer>
+                        <ImageSlidev src={ImageSlid3} alt="imagem home" />
+                    </SliderConatainer>
+                </Slider>
+            </div>
         </div>
     );
 }

@@ -58,7 +58,7 @@ export const ContainerRight = styled.div`
 `;
 export const Line = styled.div`
   height: 40px;
-  border: 0.5px solid #bababa;
+  border: 0.5px solid #F2F2F2;
 `;
 
 export const ContainerText = styled.div`

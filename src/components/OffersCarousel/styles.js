@@ -1,13 +1,6 @@
 import styled from "styled-components";
 
 
-export const Divisory = styled.div`
-width: 70vw;
-border: solid 1px  #bebebf;
-
-`
-
-
 export const Container = styled.div`
   background-color: #f6f6f6;
   display: flex;
@@ -30,7 +23,7 @@ export const Container = styled.div`
 
   .rec.rec-arrow:disabled {
     border: none;
-    background-color: #bebebf;
+    background-color: #F2F2F2;
     color: #efefef;
   }
 `;

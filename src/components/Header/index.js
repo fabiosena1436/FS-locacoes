@@ -23,7 +23,7 @@ import {
 
 export function Header() {
 
-    const { logout } = useUser()
+    const { logout, userData } = useUser()
     const {
         
         push,
@@ -55,7 +55,7 @@ export function Header() {
                     </PageLink>
 
                     <ContainerText>
-                        <p>Ola Fabio</p>
+                        <p>Ola {userData.name}</p>
                         <PageLinkExit onClick={logoutUser}>
                             Sair
                         </PageLinkExit>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 
 export const Container = styled.div`
-  background-color: #f6f6f6;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,7 +25,7 @@ export const Container = styled.div`
 
   .rec.rec-arrow:disabled {
     border: none;
-    background-color: #bebebf;
+    background-color:#F2F2F2;
     color: #efefef;
   }
 `;
@@ -75,3 +75,9 @@ export const Button = styled(Link)`
   align-items: center;
   justify-content: center;
 `;
+
+export const Divisory = styled.div`
+width: 70vw;
+border: solid 1px  #F2F2F2;
+
+`

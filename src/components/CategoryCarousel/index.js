@@ -8,7 +8,8 @@ import {
     CategoryImg,
     ContainerItens,
     Image,
-    Button
+    Button,
+    Divisory
 } from './styles'
 import Carousel from 'react-elastic-carousel'
 
@@ -36,6 +37,7 @@ export function CategoryCarousel() {
 
     return (
         <Container>
+             <Divisory></Divisory>
             <CategoryImg src={Category} alt="logo categoria" />
 
             <Carousel itemsToShow={5} style={{ width: '90%' }}

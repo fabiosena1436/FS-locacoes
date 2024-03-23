@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
- background: #e5e5e5;
+ background:#F2F2F2;
  min-height: calc(100vh - 72px);
 
 `;
@@ -28,9 +28,10 @@ export const CategoriesMenu = styled.div`
 
 export const ProductsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(3, 0fr);
+  gap: 30px;
   padding: 40px;
-  justify-items:center;
+  justify-content: center;
   margin-top: 20px;
+ 
 `;
