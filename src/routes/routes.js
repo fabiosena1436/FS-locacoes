@@ -8,6 +8,7 @@ import Home from "../containers/Home";
 import PrivateRoouter from "./private-route";
 import Products from "../containers/Products";
 import Cart from "../containers/Cart";
+import { About } from "../components";
 
 function Routes() {
     return (
@@ -18,6 +19,7 @@ function Routes() {
                 <PrivateRoouter exact component={Home} path="/" />
                 <PrivateRoouter  component={Products} path="/produtos" />
                 <PrivateRoouter  component={Cart} path="/carrinho" />
+                <PrivateRoouter  component={About} path="/about" />
             </Switch>
         </Router>
     )

@@ -15,8 +15,7 @@ function PrivateRouter({ component, ...rest }) {
 
     return (
         <>
-            <Header />
-           
+            <Header />         
             <Route {...rest} component={component} />
             <Footer/>
         </>
