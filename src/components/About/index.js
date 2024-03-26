@@ -1,19 +1,16 @@
 import React from "react";
 
 
-import { useCart } from "../../hooks/CartContext";
+
 import { Container, ContainerText } from "./styles";
 
 export function About() {
-  const { cartProducts } = useCart();
-  console.log(cartProducts);
+
   return (
     <Container>
       <ContainerText>
         <h1>Nossa historia</h1>
         <p>
-          Claro, aqui está a versão atualizada do texto, levando em consideração
-          a parte de locação dos artigos de festa e a menção ao sócio Neto:
           Bem-vindo à Casa Senna, onde transformamos sonhos em realidade e
           momentos especiais em memórias inesquecíveis. Somos muito mais do que
           uma empresa de eventos - somos contadores de histórias, arquitetos de
@@ -65,3 +62,4 @@ export function About() {
     </Container>
   );
 }
+

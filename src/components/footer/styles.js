@@ -35,12 +35,15 @@ export const SocialMedea = styled.div`
     width: 30px;
   }
 
+  
+
 `;
 export const Footerreserv = styled.div`
 height:50px;
-background-color: #EEEEEE;
+background-color:#d77424;
 display: flex;
 justify-content: center;
 align-items: center;
+color: #ffffff;
  
 `;

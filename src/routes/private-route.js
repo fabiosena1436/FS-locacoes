@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { Header } from "../components/Header";
 import { Footer } from "../components";
 
-function PrivateRouter({ component, ...rest }) {
+function PrivateRouter({ component, isAdmin, ...rest }) {
 
     const user = localStorage.getItem('dadosLocal:userData')
 
@@ -13,11 +13,15 @@ function PrivateRouter({ component, ...rest }) {
         return <Redirect to="login" />
     }
 
+    if(isAdmin && !JSON.parse(user).admin){
+        return  <Redirect to="/" />
+    }
+
     return (
         <>
-            <Header />         
+            {!isAdmin && <Header />}
             <Route {...rest} component={component} />
-            <Footer/>
+            {!isAdmin && <Footer />}
         </>
     )
 }
@@ -25,5 +29,6 @@ function PrivateRouter({ component, ...rest }) {
 export default PrivateRouter
 
 PrivateRouter.propTypes = {
-    component: PropTypes.oneOfType([PropTypes.func, PropTypes.element])
+    component: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
+    isAdmin: PropTypes.bool
 }

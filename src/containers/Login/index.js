@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 
 import LoginImg from "../../assets/login1.svg";
 import logo from "../../assets/logo2.svg";
-import {Button} from "../../components";
+import { Button } from "../../components";
 import { useUser } from "../../hooks/UserContext";
 import api from "../../services/api";
 
@@ -24,9 +24,9 @@ import {
 
 function Login() {
 
-    const history =useHistory()
+    const history = useHistory()
 
-    const {putUserData} = useUser()
+    const { putUserData } = useUser()
 
     const schema = Yup.object().shape({
         email: Yup.string().email("Digite um e-mail válido").required("O e-mail é obrigatório"),
@@ -43,7 +43,7 @@ function Login() {
 
 
     const onSubmit = async clientData => {
-        const {data} = await toast.promise(
+        const { data } = await toast.promise(
             api.post('sessions', {
                 email: clientData.email,
                 password: clientData.password
@@ -59,7 +59,14 @@ function Login() {
         putUserData(data)
 
         setTimeout(() => {
-            history.push('/')
+            if (data.admin) {
+                history.push('/pedidos')
+
+            } else {
+                history.push('/')
+            }
+
+
         }, 1000)
     }
 

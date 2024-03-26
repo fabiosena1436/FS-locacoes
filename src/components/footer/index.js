@@ -36,10 +36,10 @@ export function Footer() {
                 </SbFooterLinksDiv>
                 <SbFooterLinksDiv>
                     <h4>Contato</h4>
-                    <p>Fone: </p>
-                    <p>Email:</p>
+                    <p>Fone: (18) 981088723 </p>
+                    <p>Email: fernandosenna2009@hotmail.com</p>
                     <p>Horario de fincionamento:</p>
-                    <p>Segunda a Sexta 09h às 18:00h </p>
+                    <p>Segunda a Sexta das 08h às 18:00h </p>
                     <p>Sábado 08h às 12h</p>
                 </SbFooterLinksDiv>
             </SbFooter>
