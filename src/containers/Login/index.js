@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 
 import LoginImg from "../../assets/login1.svg";
 import logo from "../../assets/logo2.svg";
-import { Button } from "../../components";
+import { Button,ErrorMessage } from "../../components";
 import { useUser } from "../../hooks/UserContext";
 import api from "../../services/api";
 
@@ -19,7 +19,6 @@ import {
     Label,
     Input,
     SignInlink,
-    ErrorMessage,
 } from './styles'
 
 function Login() {

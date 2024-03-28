@@ -57,35 +57,23 @@ export const Input = styled.input`
   border-radius: 5px;
   background: #fff;
   box-shadow: 3px 3px 10px 0px rgba(74, 144, 226, 0.19);
-  border: ${props => (props.error ? ' 2px solid #cc1717' : 'none')};
+  border: ${(props) => (props.error ? " 2px solid #cc1717" : "none")};
   padding-left: 10px;
 `;
 
-
-
 export const SignInlink = styled.p`
-color: #FFF;
-font-family: Roboto;
-font-size: 14px;
-font-style: normal;
-font-weight: 300;
-line-height: normal;
-width: 187.296px;
-height: 22.991px;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  width: 187.296px;
+  height: 22.991px;
 
-a{
+  a {
     cursor: pointer;
     text-decoration: underline;
-    color: #FFF;
-}
-`
-
-export const ErrorMessage = styled.p`
-font-style: normal;
-font-weight: normal;
-font-size: 14px;
-line-height: 16px;
-color: #cc1717;
-margin-top: 3px;
-
-`
+    color: #fff;
+  }
+`;

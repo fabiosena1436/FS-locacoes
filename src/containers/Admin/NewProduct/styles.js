@@ -20,7 +20,7 @@ export const Label = styled.p`
   margin-bottom: 3px;
 `;
 
-export const Imput = styled.imput`
+export const Input = styled.input`
   height: 40px;
   background: #ffffff;
   box-shadow: 0px 14px 14px rgba(0, 0, 0, 0.1);

@@ -8,7 +8,8 @@ import { toast } from 'react-toastify';
 
 import logo from "../../assets/logo2.svg";
 import RegisterImg from "../../assets/conta1.svg";
-import {Button} from "../../components/Button";
+import {Button, } from "../../components/Button";
+import { ErrorMessage } from "../../components";
 import api from "../../services/api";
 import {
     Container,
@@ -17,7 +18,7 @@ import {
     Label,
     Input,
     SignInlink,
-    ErrorMessage
+    
 } from './styles'
 
 function Register() {
