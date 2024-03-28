@@ -7,7 +7,7 @@ import { Container, Header, Body, EmptyCart, StatusCar } from "./styles";
 
 export function CartItems() {
     const { cartProducts,increaseProcudts, decreaseProcudts } = useCart();
-    console.log(cartProducts);
+    
     return (
         <Container>
             <Header>

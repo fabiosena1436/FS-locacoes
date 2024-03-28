@@ -8,7 +8,10 @@ import Home from "../containers/Home";
 import PrivateRoouter from "./private-route";
 import Products from "../containers/Products";
 import Cart from "../containers/Cart";
-import { About, Admin } from "../components";
+import { About } from "../components";
+import Admin from "../containers/Admin";
+import paths from "../constants/paths";
+
 
 function Routes() {
     return (
@@ -20,7 +23,9 @@ function Routes() {
                 <PrivateRoouter  component={Products} path="/produtos" />
                 <PrivateRoouter  component={Cart} path="/carrinho" />
                 <PrivateRoouter  component={About} path="/about" />
-                <PrivateRoouter  component={Admin} path="/pedidos" isAdmin/>
+                <PrivateRoouter  component={Admin} path={paths.Order} isAdmin/>
+                <PrivateRoouter  component={Admin} path={paths.Products} isAdmin/>
+                <PrivateRoouter  component={Admin} path={paths.NewProduct} isAdmin/>
             </Switch>
         </Router>
     )
