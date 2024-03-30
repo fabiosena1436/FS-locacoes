@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 
 import Login from "../containers/Login";
@@ -11,7 +10,6 @@ import Cart from "../containers/Cart";
 import { About } from "../components";
 import Admin from "../containers/Admin";
 import paths from "../constants/paths";
-
 
 function Routes() {
     return (
@@ -26,9 +24,10 @@ function Routes() {
                 <PrivateRoouter  component={Admin} path={paths.Order} isAdmin/>
                 <PrivateRoouter  component={Admin} path={paths.Products} isAdmin/>
                 <PrivateRoouter  component={Admin} path={paths.NewProduct} isAdmin/>
+                <PrivateRoouter  component={Admin} path={paths.EditProduct} isAdmin/>
             </Switch>
         </Router>
     )
 }
 
-export default Routes
+export default Routes;

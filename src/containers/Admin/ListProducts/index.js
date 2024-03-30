@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import api from "../../../services/api";
-
+import { useHistory } from "react-router-dom";
 import { useEffect } from "react";
 
 import Table from "@mui/material/Table";
@@ -13,11 +13,13 @@ import Paper from "@mui/material/Paper";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import DisabledByDefaultIcon from "@mui/icons-material/DisabledByDefault";
 import formateCurrency from "../../../utils/formatCurrency";
-
 import { Container, Img, EditIconStyles } from "./styles";
+import paths from "../../../constants/paths";
 
 function ListProducts() {
   const [products, setProducts] = useState();
+  const history = useHistory();
+
   useEffect(() => {
     async function loadOrders() {
       const { data } = await api.get("products");
@@ -33,6 +35,10 @@ function ListProducts() {
       return <CheckBoxIcon style={{ color: "#228b22" }} />;
     }
     return <DisabledByDefaultIcon style={{ color: "#CC1717" }} />;
+  }
+
+  function editProduct(product) {
+    history.push(paths.EditProduct, { product });
   }
 
   return (
@@ -64,7 +70,7 @@ function ListProducts() {
                     <Img src={product.url} alt="imagem-produto" />
                   </TableCell>
                   <TableCell>
-                    <EditIconStyles />
+                    <EditIconStyles onClick={() => editProduct(product)} />
                   </TableCell>
                 </TableRow>
               ))}
