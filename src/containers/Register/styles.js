@@ -6,10 +6,12 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+ 
 `
 
 export const RegisterImage = styled.img`
-  height: 90%;
+  height: 95%;
   flex-shrink: 0;
   border-radius: 10px 0px 0px 10px;
 `
@@ -18,7 +20,7 @@ export const ContainerItens = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 90%;
+  height: 95%;
   background: #919191;
   box-shadow: 0px 4px 15px 0px rgba(74, 144, 226, 0.24);
   border-radius: 0 10px 10px 0;
