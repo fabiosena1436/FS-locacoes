@@ -18,7 +18,7 @@ import paths from "../../../constants/paths";
 
 function ListProducts() {
   const [products, setProducts] = useState();
-  const history = useHistory();
+  const { push } = useHistory();
 
   useEffect(() => {
     async function loadOrders() {
@@ -38,7 +38,8 @@ function ListProducts() {
   }
 
   function editProduct(product) {
-    history.push(paths.EditProduct, { product });
+    push(paths.EditProduct,{product});
+    
   }
 
   return (

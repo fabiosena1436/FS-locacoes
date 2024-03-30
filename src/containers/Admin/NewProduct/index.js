@@ -53,6 +53,15 @@ function NewProduct() {
       pending: "Criando novo produto...",
       success: "Produto criado com sucesso",
       error: "Falha ao criar o produto",
+      file: Yup.mixed()
+      .test("required", "Carregue uma imagem", (value) => {
+        return value?.length > 0;
+      })
+      .test("type", "Carregue apenas aquivos JPEG", (value) => {
+        return (
+          value[0]?.type === "image/jpeg" || value[0]?.type === "image/png"
+        );
+      }),
     });
 
     setTimeout(() => {
@@ -79,7 +88,7 @@ function NewProduct() {
           <Input
             type="text"
             {...register("name")}
-            placeholder="Digite seu nome"
+            placeholder="Digite o nome do produto"
           />
           <ErrorMessage>{errors.name?.message}</ErrorMessage>
         </div>

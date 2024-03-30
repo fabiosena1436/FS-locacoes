@@ -3,7 +3,14 @@ import api from "../../../services/api";
 
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
-import { Container, Label, Input, ButtonStyles, LabelUpload } from "./styles";
+import {
+  Container,
+  Label,
+  Input,
+  ButtonStyles,
+  LabelUpload,
+  ContairneInput,
+} from "./styles";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { useForm, Controller } from "react-hook-form";
 import ReactSelect from "react-select";
@@ -15,21 +22,21 @@ import { toast } from "react-toastify";
 function EditProduct() {
   const [fileName, setFileName] = useState(null);
   const [categories, setCategories] = useState(null);
-  const { push } = useHistory();
+
+  const {
+    push,
+    location: {
+      state: { product },
+    },
+  } = useHistory();
+
+
 
   const schema = Yup.object().shape({
     name: Yup.string().required("Digite o nome do produto"),
     price: Yup.string().required("Digite o preço do produto"),
     category: Yup.object().required("Escolha uma categoria"),
-    file: Yup.mixed()
-      .test("required", "Carregue uma imagem", (value) => {
-        return value?.length > 0;
-      })
-      .test("type", "Carregue apenas aquivos JPEG", (value) => {
-        return (
-          value[0]?.type === "image/jpeg" || value[0]?.type === "image/png"
-        );
-      }),
+    offer: Yup.bool(),
   });
 
   const {
@@ -48,11 +55,12 @@ function EditProduct() {
     productDataFomData.append("price", data.price);
     productDataFomData.append("category_id", data.category.id);
     productDataFomData.append("file", data.file[0]);
+    productDataFomData.append("offer", data.offer);
 
-    await toast.promise(api.post("products", productDataFomData), {
-      pending: "Criando novo produto...",
-      success: "Produto criado com sucesso",
-      error: "Falha ao criar o produto",
+    await toast.promise(api.put(`products/${product.id}`, productDataFomData), {
+      pending: "Editando o produto ...",
+      success: "Produto editado com sucesso",
+      error: "Falha ao editar o produto",
     });
 
     setTimeout(() => {
@@ -72,14 +80,14 @@ function EditProduct() {
 
   return (
     <Container>
-      <h1>Cadastrar novos produtos</h1>
+      <h1>Editar produto</h1>
       <form noValidate onSubmit={handleSubmit(onSubmit)}>
         <div>
           <Label>Nome</Label>
           <Input
             type="text"
             {...register("name")}
-            placeholder="Digite seu nome"
+            defaultValue={product.name}
           />
           <ErrorMessage>{errors.name?.message}</ErrorMessage>
         </div>
@@ -88,7 +96,7 @@ function EditProduct() {
           <Input
             type="number"
             {...register("price")}
-            placeholder="Digite o valor do porduto"
+            defaultValue={product.price}
           />
           <ErrorMessage>{errors.price?.message}</ErrorMessage>
         </div>
@@ -116,6 +124,7 @@ function EditProduct() {
           <Controller
             name="category"
             control={control}
+            defaultValue={product.category}
             render={({ field }) => {
               return (
                 <ReactSelect
@@ -124,14 +133,22 @@ function EditProduct() {
                   getOptionLabel={(cat) => cat.name}
                   getOptionValue={(cat) => cat.id}
                   placeholder="...Selecione a categoria"
+                  defaultValue={product.category}
                 />
               );
             }}
           ></Controller>
           <ErrorMessage>{errors.category?.message}</ErrorMessage>
         </div>
-
-        <ButtonStyles>Adicionar produto</ButtonStyles>
+        <ContairneInput>
+          <input
+            type="checkbox"
+            {...register("offer")}
+            defaultChecked={product.offer}
+          />
+          <Label>Produto em destaque?</Label>
+        </ContairneInput>
+        <ButtonStyles>Editar produto</ButtonStyles>
       </form>
     </Container>
   );

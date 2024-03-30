@@ -58,3 +58,14 @@ export const LabelUpload = styled.label`
     width: 1px;
   }
 `;
+export const ContairneInput = styled.label`
+display: flex;
+align-items: baseline;
+gap: 10px;
+
+input{
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+`;
