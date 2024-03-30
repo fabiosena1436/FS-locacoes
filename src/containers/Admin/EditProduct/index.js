@@ -1,25 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { useForm, Controller } from "react-hook-form";
-import { useHistory } from "react-router-dom";
-import ReactSelect from "react-select";
+import api from "../../../services/api";
 
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
-import CloudUploadIcon from "@mui/icons-material/CloudUpload";
-
-import { ErrorMessage } from "../../../components";
-import api from "../../../services/api";
 import { Container, Label, Input, ButtonStyles, LabelUpload } from "./styles";
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import { useForm, Controller } from "react-hook-form";
+import ReactSelect from "react-select";
+import { ErrorMessage } from "../../../components";
+import { useHistory } from "react-router-dom";
+
+import { toast } from "react-toastify";
 
 function EditProduct() {
   const [fileName, setFileName] = useState(null);
   const [categories, setCategories] = useState(null);
-  const {
-    push,
-    location: {
-      state: { product },
-    },
-  } = useHistory();
+  const { push } = useHistory();
 
   const schema = Yup.object().shape({
     name: Yup.string().required("Digite o nome do produto"),
@@ -45,7 +41,24 @@ function EditProduct() {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    const productDataFomData = new FormData();
+
+    productDataFomData.append("name", data.name);
+    productDataFomData.append("price", data.price);
+    productDataFomData.append("category_id", data.category.id);
+    productDataFomData.append("file", data.file[0]);
+
+    await toast.promise(api.post("products", productDataFomData), {
+      pending: "Criando novo produto...",
+      success: "Produto criado com sucesso",
+      error: "Falha ao criar o produto",
+    });
+
+    setTimeout(() => {
+      push("/listar-produtos");
+    }, 1500);
+  };
 
   useEffect(() => {
     async function loadCategories() {
