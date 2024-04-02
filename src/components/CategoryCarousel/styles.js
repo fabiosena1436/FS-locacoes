@@ -47,14 +47,21 @@ export const ContainerItens = styled.div`
     border-color: #ffff;
     transform: scale(1.02);
   }
+
+  
 `;
 export const Image = styled.img`
   width: 200px;
   border-radius: 10px;
+  @media screen and (max-width: 768px) {
+   width: 100px;
+  }
 `;
+
+
 export const Button = styled(Link)`
   margin-top: 16px;
-  background-color: #fa4e3c;
+  /* background-color: #fa4e3c; */
   border: none;
   border-radius: 8px;
   height: 50px;
@@ -63,7 +70,7 @@ export const Button = styled(Link)`
   font-size: 18px;
   line-height: 100%;
   text-align: center;
-  color: #ffff;
+  color: #000000;
   cursor: pointer;
 
   &:hover {
@@ -74,6 +81,12 @@ export const Button = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 768px) {
+   width: 100px;
+   font-size: 15px;
+   height: 40px;
+  }
 `;
 
 export const Divisory = styled.div`
