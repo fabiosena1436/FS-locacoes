@@ -1,9 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
- 
-
-`;
+export const Container = styled.div``;
 
 export const ContainerHeader = styled.div`
   height: 15vh;
@@ -13,8 +10,11 @@ export const ContainerHeader = styled.div`
   align-items: center;
   flex-direction: row;
   justify-content: space-around;
-  
 
+  @media screen and (max-width: 768px) {
+gap: 10px;
+    height: auto;
+  }
 `;
 
 export const ContainerLeft = styled.div`
@@ -24,16 +24,38 @@ export const ContainerLeft = styled.div`
 
   img {
     max-height: 10vh;
+    max-width: 100%;
+  }
+
+
+  @media screen and (max-width: 768px) {
+   
+    height: auto;
+    gap: 10px;
+    img {
+    max-height: 5vh;
+    max-width: 100%;
+  }
   }
 `;
 
 export const PageLink = styled.a`
   cursor: pointer;
   text-decoration: none;
-  color:${props => (props.isActive ? "#d77424" : "  #555555")} ;
+  color: ${props => (props.isActive ? "#d77424" : "#555555")};
   font-size: 20px;
   line-height: 19px;
-  font-weight: ${props => (props.isActive ? "bold" : "  normal")};
+  font-weight: ${props => (props.isActive ? "bold" : "normal")};
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
+
+    img{
+     width: 15px;
+    }
+
+  
+  }
 `;
 
 export const PageLinkExit = styled.a`
@@ -45,6 +67,10 @@ export const PageLinkExit = styled.a`
   align-items: center;
   color: #d77424;
   cursor: pointer;
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 export const ContainerRight = styled.div`
@@ -54,11 +80,17 @@ export const ContainerRight = styled.div`
 
   img {
     max-height: 30px;
+    max-width: 100%;
+  }
+  
+  @media screen and (max-width: 768px) {
+   gap: 10px;
   }
 `;
+
 export const Line = styled.div`
   height: 40px;
-  border: 0.5px solid #F2F2F2;
+  border: 0.5px solid #f2f2f2;
 `;
 
 export const ContainerText = styled.div`
@@ -69,7 +101,14 @@ export const ContainerText = styled.div`
     line-height: 16px;
     color: #555555;
   }
-`;
+
+  
+  @media screen and (max-width: 768px) {
+    p{
+      font-size: 10px;
+    }
+  }
+`
 
 export const SectionHeader = styled.div`
   position: relative;
@@ -79,7 +118,7 @@ export const SectionHeader = styled.div`
   justify-content: center;
   align-items: center;
 
-  p{
+  p {
     font-size: 20px;
     color: #ffffff;
   }
