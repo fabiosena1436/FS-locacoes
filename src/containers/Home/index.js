@@ -1,6 +1,6 @@
 import React from "react";
 
-import { CategoryCarousel, OffersCarousel, HomeCarousel } from "../../components";
+import { CategoryCarousel,  HomeCarousel, OffersCarousel } from "../../components";
 
 import { Container } from './styles'
 
@@ -11,7 +11,7 @@ function Home() {
             <HomeCarousel />
             <CategoryCarousel />
             <OffersCarousel />
-         
+    
         </Container>)
 }
 

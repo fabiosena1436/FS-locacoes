@@ -9,7 +9,7 @@ export const Container = styled.div`
 `;
 
 export const ProductImg = styled.img`
-  width: 60px;
+  width: 100px;
   border-radius: 5px;
 `;
 

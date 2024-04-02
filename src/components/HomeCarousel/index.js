@@ -40,6 +40,7 @@ export function HomeCarousel() {
                     </SliderConatainer>
                 </Slider>
             </div>
+            
         </div>
     );
 }
