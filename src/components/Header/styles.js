@@ -12,8 +12,9 @@ export const ContainerHeader = styled.div`
   justify-content: space-around;
 
   @media screen and (max-width: 768px) {
-gap: 10px;
+    gap: 10px;
     height: auto;
+    height: 15vh;
   }
 `;
 
@@ -27,34 +28,30 @@ export const ContainerLeft = styled.div`
     max-width: 100%;
   }
 
-
   @media screen and (max-width: 768px) {
-   
     height: auto;
     gap: 10px;
     img {
-    max-height: 5vh;
-    max-width: 100%;
-  }
+      max-height: 5vh;
+      max-width: 100%;
+    }
   }
 `;
 
 export const PageLink = styled.a`
   cursor: pointer;
   text-decoration: none;
-  color: ${props => (props.isActive ? "#d77424" : "#555555")};
+  color: ${(props) => (props.isActive ? "#d77424" : "#555555")};
   font-size: 20px;
   line-height: 19px;
-  font-weight: ${props => (props.isActive ? "bold" : "normal")};
+  font-weight: ${(props) => (props.isActive ? "bold" : "normal")};
 
   @media screen and (max-width: 768px) {
     font-size: 0.8rem;
 
-    img{
-     width: 15px;
+    img {
+      width: 15px;
     }
-
-  
   }
 `;
 
@@ -82,9 +79,9 @@ export const ContainerRight = styled.div`
     max-height: 30px;
     max-width: 100%;
   }
-  
+
   @media screen and (max-width: 768px) {
-   gap: 10px;
+    gap: 10px;
   }
 `;
 
@@ -102,13 +99,12 @@ export const ContainerText = styled.div`
     color: #555555;
   }
 
-  
   @media screen and (max-width: 768px) {
-    p{
+    p {
       font-size: 10px;
     }
   }
-`
+`;
 
 export const SectionHeader = styled.div`
   position: relative;
@@ -121,5 +117,11 @@ export const SectionHeader = styled.div`
   p {
     font-size: 20px;
     color: #ffffff;
+  }
+
+  @media screen and (max-width: 768px) {
+    p {
+      font-size: 1rem;
+    }
   }
 `;
