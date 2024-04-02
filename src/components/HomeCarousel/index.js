@@ -23,8 +23,8 @@ export function HomeCarousel() {
     };
 
     return (
-        <div style={{width:'100vw',backgroundColor:'#ffffff'}}>
-            <div style={{ width: '80%', margin: '0 auto'}}>
+        <div style={{backgroundColor:'#ffffff'}}>
+            <div className='containder-image' style={{ width: '80%', margin: '0 auto'}}>
                 <Slider {...settings}>
                     <SliderConatainer>
                         <ImageSlidev src={ImageSlid} alt="imagem home" />
