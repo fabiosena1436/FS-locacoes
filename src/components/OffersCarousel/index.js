@@ -45,7 +45,7 @@ export function OffersCarousel() {
         style={{ width: "90%" }}
         breakPoints={breakPoints}
         pagination={true} // Oculta a paginação
-        showArrows={false} // Oculta as setas de navegação
+        showArrows={true} // Oculta as setas de navegação
         itemPadding={[0, 5]}
       >
         {products.map((product) => (

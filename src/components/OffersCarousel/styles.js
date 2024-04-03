@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 35px;
+  gap: 20px;
   padding: 35px 0;
 
   .rec.rec-arrow {
@@ -28,6 +28,9 @@ export const Container = styled.div`
 
   @media screen and (max-width: 768px) {
     gap: 15px;
+    .rec.rec-arrow {
+      display: none;
+    }
   }
 `;
 
@@ -42,7 +45,7 @@ export const ContainerItens = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #ffff;
-  padding: 1rem;
+  padding: 20px 30px;
   border-radius: 10px;
   /* border: .2rem solid #000000; */
   transition: 0.5s ease;
@@ -63,7 +66,6 @@ export const ContainerItens = styled.div`
   @media screen and (max-width: 768px) {
     p {
       font-size: 1rem;
-     
     }
   }
 `;
