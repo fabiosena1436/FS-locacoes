@@ -61,6 +61,12 @@ export const Image = styled.img`
   width: 200px;
   border-radius: 10px;
   margin-bottom:16px;
+  
+   @media screen and (max-width: 768px) {
+   width: 100px;
+  
+  }
+  
 `;
 export const Button = styled.button`
   margin-top: 16px;
@@ -83,5 +89,11 @@ export const Button = styled.button`
 
   &:hover {
     opacity: 0.7;
+  }
+
+  @media screen and (max-width: 768px) {
+   width: 100px;
+   font-size: 15px;
+   height: 40px;
   }
 `;
