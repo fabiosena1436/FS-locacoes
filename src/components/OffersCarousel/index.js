@@ -3,8 +3,9 @@ import api from "../../services/api";
 import formatCurrency from "../../utils/formatCurrency";
 import { useHistory } from "react-router-dom";
 import Cart from "../../assets/carrinho.svg";
+import imgDestaque from "../../assets/OFERTAS.svg";
 import { useCart } from "../../hooks/CartContext"; // Importe useCart aqui
-import { Container, ContainerItens, Image, ImageCart, Button } from "./styles";
+import { Container, ContainerItens, Image, ImageCart, Button,ImgEmphasis } from "./styles";
 import Carousel from "react-elastic-carousel";
 
 export function OffersCarousel() {
@@ -38,12 +39,17 @@ export function OffersCarousel() {
 
   return (
     <Container>
+      <ImgEmphasis src={imgDestaque} alt="foto do produto" />
       <Carousel
         itemsToShow={5}
         style={{ width: "90%" }}
         breakPoints={breakPoints}
+        pagination={true} // Oculta a paginação
+        showArrows={false} // Oculta as setas de navegação
+        itemPadding={[0, 5]}
       >
         {products.map((product) => (
+          
           <ContainerItens key={product.id}>
             <Image src={product.url} alt="foto do produto" />
             <p> {product.name}</p>

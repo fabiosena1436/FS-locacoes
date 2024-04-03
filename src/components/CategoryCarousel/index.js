@@ -41,8 +41,9 @@ export function CategoryCarousel() {
             <CategoryImg src={Category} alt="logo categoria" />
             <Carousel
                 breakPoints={breakPoints}
-                pagination={false} // Oculta a paginação
+                pagination={true} // Oculta a paginação
                 showArrows={false} // Oculta as setas de navegação
+              
             >
                 {categories.map(category => (
                     <ContainerItens key={category.id}>

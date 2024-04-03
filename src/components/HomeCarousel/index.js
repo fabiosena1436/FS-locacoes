@@ -8,7 +8,7 @@ import ImageSlid2 from '../../assets/home-Header-2.svg'
 import ImageSlid3 from '../../assets/home-Header-3.svg'
 import {
     SliderConatainer,
-    ImageSlidev,
+    ImageSlidev,ContainerImage
 } from './styles'
 
 export function HomeCarousel() {
@@ -24,8 +24,8 @@ export function HomeCarousel() {
 
     return (
         <div style={{backgroundColor:'#ffffff'}}>
-            <div className='containder-image' style={{ width: '80%', margin: '0 auto'}}>
-                <Slider {...settings}>
+            <ContainerImage>
+                <Slider {...settings} className='itemSlide'>
                     <SliderConatainer>
                         <ImageSlidev src={ImageSlid} alt="imagem home" />
                     </SliderConatainer>
@@ -39,8 +39,7 @@ export function HomeCarousel() {
                         <ImageSlidev src={ImageSlid3} alt="imagem home" />
                     </SliderConatainer>
                 </Slider>
-            </div>
-            
+            </ContainerImage>
         </div>
     );
 }

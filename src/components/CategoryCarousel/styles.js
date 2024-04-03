@@ -96,7 +96,7 @@ export const Button = styled(Link)`
   justify-content: center;
 
   @media screen and (max-width: 768px) {
-   width: 100px;
+   width: 100%;
    font-size: 15px;
    height: 40px;
   }
