@@ -28,15 +28,21 @@ export const Container = styled.div`
     background-color:#F2F2F2;
     color: #efefef;
   }
+
+  @media screen and (max-width: 768px) {
+    background-color:#efefef;
+  }
 `;
 
 export const CategoryImg = styled.img`
 width: 15vw;
 margin-top: 40px;
+
+
 @media screen and (max-width: 768px) {
    width: 150px;
-   
-  }
+   margin-top:0;
+}
 `;
 
 export const ContainerItens = styled.div`
@@ -50,15 +56,18 @@ export const ContainerItens = styled.div`
   &:hover {
     border-color: #ffff;
     transform: scale(1.02);
+  
   }
 
   
 `;
+
+
 export const Image = styled.img`
   width: 200px;
-  border-radius: 10px;
+  border-radius: 5px;
   @media screen and (max-width: 768px) {
-   width: 100px;
+   width: 130px;
   }
 `;
 
