@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
-
 import PropTypes from "prop-types";
+import Carousel from 'react-elastic-carousel';
 
 import {
     Container,
     CategoryButton,
-    CategoriesMenu,
     ProductsContainer
 } from './styles'
-
 
 import ProductsCarousel from "../../components/HomeCarousel";
 import api from '../../services/api'
@@ -17,76 +15,78 @@ import { CardProduct } from "../../components/index";
 
 function Products({ location: { state } }) {
 
-    let categoryId = 0
+    let categoryId = 0;
     if (state?.categoryId) {
-        categoryId = state.categoryId
+        categoryId = state.categoryId;
     }
 
-
-
-
-    const [categories, setCategories] = useState([])
-    const [products, setProducts] = useState([])
-    const [filteredProducts, setFilteredProducts] = useState([])
-    const [activeCategory, setactiveCategory] = useState(categoryId)
+    const [categories, setCategories] = useState([]);
+    const [products, setProducts] = useState([]);
+    const [filteredProducts, setFilteredProducts] = useState([]);
+    const [activeCategory, setActiveCategory] = useState(categoryId);
 
     useEffect(() => {
         async function loadCategories() {
-            const { data } = await api.get('categories')
+            const { data } = await api.get('categories');
 
-            const newCategories = [{ id: 0, name: 'Todos' }, ...data]
-            setCategories(newCategories)
+            const newCategories = [{ id: 0, name: 'Todos' }, ...data];
+            setCategories(newCategories);
         }
 
         async function loadProducts() {
-            const { data: allProducts } = await api.get('products')
+            const { data: allProducts } = await api.get('products');
 
             const newPoducts = allProducts.map(product => {
-                return { ...product, formatedPrice: formatCurrency(product.price) }
-            })
+                return { ...product, formatedPrice: formatCurrency(product.price) };
+            });
 
-            setProducts(newPoducts)
+            setProducts(newPoducts);
         }
-        loadProducts()
-        loadCategories()
-    }, [])
-
+        loadProducts();
+        loadCategories();
+    }, []);
 
     useEffect(() => {
         if (activeCategory === 0) {
-            setFilteredProducts(products)
+            setFilteredProducts(products);
         } else {
             const newFilteredProduct = products.filter(
                 product => product.category_id === activeCategory
-            )
-            setFilteredProducts(newFilteredProduct)
+            );
+            setFilteredProducts(newFilteredProduct);
         }
-    }, [activeCategory, products])
+    }, [activeCategory, products]);
 
     return (
         <Container>
-
             <ProductsCarousel />
-            <CategoriesMenu>
-                {categories && categories.map(category => <CategoryButton type="button" key={category.id}
-
-                    isActiveCategory={activeCategory === category.id}
-                    onClick={() => { setactiveCategory(category.id) }}>
-                    {category.name}</CategoryButton>)}
-            </CategoriesMenu>
+            <Carousel itemsToShow={15} breakPoints={[
+                { width: 1, itemsToShow: 4 }, // 1 px de largura (todos os dispositivos)
+                { width: 400, itemsToShow: 3 }, // 400px e acima (dispositivos maiores)
+                { width: 800, itemsToShow: 15 } // 800px e acima (dispositivos ainda maiores)
+            ]}>
+                {categories.map(category => (
+                    <CategoryButton
+                        key={category.id}
+                        type="button"
+                        isActiveCategory={activeCategory === category.id}
+                        onClick={() => setActiveCategory(category.id)}
+                    >
+                        {category.name}
+                    </CategoryButton>
+                ))}
+            </Carousel>
             <ProductsContainer>
-                {filteredProducts && filteredProducts.map(product => (
-
+                {filteredProducts.map(product => (
                     <CardProduct key={product.id} product={product} />
-
                 ))}
             </ProductsContainer>
-        </Container >
-    )
+        </Container>
+    );
 }
 
 Products.propTypes = {
     location: PropTypes.object
 }
 
-export default Products
+export default Products;

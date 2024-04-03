@@ -4,11 +4,27 @@ export const Container = styled.div`
  background:#F2F2F2;
  min-height: calc(100vh - 72px);
 
+ .liNuNA{
+  display: none;
+ }
+
+ .blnmcK{
+  display: none;
+ }
+
+ .gCgsXv {
+    background-color: rgb(9 9 9 / 50%);
+    box-shadow: 0 0 1px 3px rgb(3 3 3);
+}
 `;
 
 export const ProductsImg = styled.img`
   width: 100%;
 `;
+
+
+
+
 export const CategoryButton = styled.button`
   cursor: pointer;
   background: none;
@@ -18,6 +34,15 @@ export const CategoryButton = styled.button`
   font-size: 17px;
   line-height: 20px;
   padding-bottom: 5px;
+  margin-top:  40px  ;
+  @media screen and (max-width: 768px) {
+    
+    font-size: 0.8rem;
+   
+  }
+
+
+ 
 `;
 export const CategoriesMenu = styled.div`
   display: flex;
@@ -34,4 +59,5 @@ export const ProductsContainer = styled.div`
   justify-content: center;
   margin-top: 20px;
  
+
 `;

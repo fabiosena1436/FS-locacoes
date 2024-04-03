@@ -30,6 +30,7 @@ export const Container = styled.div`
     gap: 15px;
     .rec.rec-arrow {
       display: none;
+    
     }
   }
 `;
@@ -65,8 +66,12 @@ export const ContainerItens = styled.div`
 
   @media screen and (max-width: 768px) {
     p {
-      font-size: 1rem;
+      font-size: 0.8rem;
+      text-align: center;
+      height: 8vw;
     }
+    padding: 20px 10px;
+    
   }
 `;
 export const Image = styled.img`
@@ -75,7 +80,8 @@ export const Image = styled.img`
   margin-bottom: 16px;
 
   @media screen and (max-width: 768px) {
-    width: 25vw;
+    width: 35vw;
+    
   }
 `;
 
@@ -113,5 +119,6 @@ export const Button = styled.button`
     width: 100%;
     font-size: 15px;
     height: 40px;
+    margin-top: 0;
   }
 `;
