@@ -1,5 +1,21 @@
 import styled from "styled-components";
 
+
+export const ContainerCategory = styled.div`
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+
+  @media screen and (max-width: 768px) {
+    .fJHrVW {
+      display: flex;
+      flex-direction: row;
+      width: 100vw;
+    }
+  }
+`;
 export const Container = styled.div`
   background-color: #f6f6f6;
   display: flex;
@@ -7,6 +23,7 @@ export const Container = styled.div`
   align-items: center;
   gap: 20px;
   padding: 35px 0;
+  width: 100vw;
 
   .rec.rec-arrow {
     background-color: #fa4e3c;

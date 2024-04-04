@@ -9,7 +9,8 @@ import {
     ContainerItens,
     Image,
     Button,
-    Divisory
+    Divisory,
+    ContainerCategory
 } from './styles';
 
 export function CategoryCarousel() {
@@ -32,31 +33,34 @@ export function CategoryCarousel() {
         { width: 400, itemsToShow: 2 },
         { width: 600, itemsToShow: 3 },
         { width: 900, itemsToShow: 4 },
-        { width: 1300, itemsToShow: 5 }
+        { width: 1300, itemsToShow: 4 }
     ];
 
     return (
         <Container>
-            <Divisory></Divisory>
-            <CategoryImg src={Category} alt="logo categoria" />
-            <Carousel
-                breakPoints={breakPoints}
-                pagination={true} // Oculta a paginação
-                showArrows={false} // Oculta as setas de navegação
-              
-            >
-                {categories.map(category => (
-                    <ContainerItens key={category.id}>
-                        <Image src={category.url} alt="foto da categoria" />
-                        <Button to={{
-                            pathname:'/produtos',
-                            state: { categoryId: category.id }
-                        }}>
-                            {category.name}
-                        </Button>
-                    </ContainerItens>
-                ))}
-            </Carousel>
+            <ContainerCategory>
+                <Divisory></Divisory>
+                <CategoryImg src={Category} alt="logo categoria" />
+                <Carousel
+                    breakPoints={breakPoints}
+                    pagination={true} // Oculta a paginação
+                    showArrows={false} // Oculta as setas de navegação
+                
+                >
+                    {categories.map(category => (
+                        <ContainerItens key={category.id}>
+                           
+                            <Button to={{
+                                pathname:'/produtos',
+                                state: { categoryId: category.id }
+                            }}>
+                                 <Image src={category.url} alt="foto da categoria" />
+                                {category.name}
+                            </Button>
+                        </ContainerItens>
+                    ))}
+                </Carousel>
+            </ContainerCategory>
         </Container>
     );
 }

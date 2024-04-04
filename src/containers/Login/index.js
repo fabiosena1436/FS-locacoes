@@ -94,7 +94,7 @@ function Login() {
           />
           <ErrorMessage>{errors.password?.message}</ErrorMessage>
 
-          <Button type="submit" style={{ marginTop: 75, marginBottom: 25 }}>
+          <Button type="submit" style={{ marginTop: 70, marginBottom: 25 }}>
             Sign In
           </Button>
         </form>

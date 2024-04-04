@@ -7,10 +7,9 @@ export const Container = styled.div`
   width: max-content;
   margin: 30px;
   @media screen and (max-width: 768px) {
-    margin: 5px 0;
-   width: 100%;
+    margin: 20px 0 0;
+    width: 100%;
   }
-  
 `;
 
 export const Header = styled.div`
@@ -24,12 +23,11 @@ export const Header = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-   width: 100vw;
+    width: 100vw;
   }
 
   p {
     font-size: 0.8rem;
-    
   }
 `;
 
@@ -62,28 +60,23 @@ export const Body = styled.div`
       font-size: 24px;
       cursor: pointer;
     }
-
   }
 
   @media screen and (max-width: 768px) {
-   width: 90vw;
-   padding: 20px 5px;
-   img{
-    width: 50px;
-   }
-   p{
-    font-size: 0.7rem;
-   }
-   
-   .quantity-container {
-   
-    button {
-      
-      font-size: 1rem;
-      
+    width: 90vw;
+    padding: 20px 5px;
+    img {
+      width: 70px;
+    }
+    p {
+      font-size: 0.7rem;
     }
 
-  }
+    .quantity-container {
+      button {
+        font-size: 1rem;
+      }
+    }
   }
 `;
 

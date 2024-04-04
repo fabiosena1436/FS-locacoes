@@ -17,7 +17,7 @@ export const ImageSlidev = styled.img`
 `;
 
 export const ContainerImage = styled.div`
-  width: 80%;
+  width: 60%;
 margin: 0 auto ;
   @media (max-width: 767px) {
     width: 100%;

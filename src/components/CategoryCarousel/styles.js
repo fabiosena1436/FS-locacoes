@@ -1,7 +1,20 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+export const ContainerCategory = styled.div`
+  width: 65vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
+  @media screen and (max-width: 768px) {
+    .fJHrVW {
+      display: flex;
+      flex-direction: row;
+      width: 100vw;
+    }
+  }
+`;
 export const Container = styled.div`
   background-color: #ffffff;
   display: flex;
@@ -9,7 +22,6 @@ export const Container = styled.div`
   align-items: center;
   gap: 35px;
   padding: 35px 0;
-  
 
   .rec.rec-arrow {
     background-color: #fa4e3c;
@@ -25,35 +37,32 @@ export const Container = styled.div`
 
   .rec.rec-arrow:disabled {
     border: none;
-    background-color:#F2F2F2;
+    background-color: #f2f2f2;
     color: #efefef;
   }
 
-  .gCgsXv {  
+  .gCgsXv {
     background-color: rgb(14 14 14 / 50%);
-    box-shadow: 0 0 1px 3px rgb(12 12 12); 
-}
+    box-shadow: 0 0 1px 3px rgb(12 12 12);
+  }
 
   @media screen and (max-width: 768px) {
-    background-color:#efefef;
+    background-color: #efefef;
     padding: 10px 0;
   }
 `;
 
 export const CategoryImg = styled.img`
-width: 15vw;
-margin-top: 40px;
+  width: 15vw;
+  margin-top: 40px;
 
-
-@media screen and (max-width: 768px) {
-   width: 150px;
-   margin-top:0;
-}
+  @media screen and (max-width: 768px) {
+    width: 150px;
+    margin: 20px;
+  }
 `;
 
 export const ContainerItens = styled.div`
-  display: flex;
-  flex-direction: column;
   background-color: #ffff;
   padding: 20px;
   border-radius: 10px;
@@ -62,12 +71,8 @@ export const ContainerItens = styled.div`
   &:hover {
     border-color: #ffff;
     transform: scale(1.02);
-  
   }
-
-  
 `;
-
 
 export const Image = styled.img`
   width: 200px;
@@ -77,13 +82,13 @@ export const Image = styled.img`
   }
 `;
 
-
 export const Button = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   margin-top: 16px;
-  /* background-color: #fa4e3c; */
   border: none;
   border-radius: 8px;
-  height: 50px;
   font-size: normal;
   font-weight: bold;
   font-size: 18px;
@@ -102,14 +107,14 @@ export const Button = styled(Link)`
   justify-content: center;
 
   @media screen and (max-width: 768px) {
-   width: 100%;
-   font-size: 15px;
-   height: 40px;
+    width: 100%;
+    font-size: 15px;
+
+    flex-direction: column;
   }
 `;
 
 export const Divisory = styled.div`
-width: 70vw;
-border: solid 1px  #F2F2F2;
-
-`
+  width: 70vw;
+  border: solid 1px #f2f2f2;
+`;

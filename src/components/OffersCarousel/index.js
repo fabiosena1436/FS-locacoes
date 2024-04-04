@@ -5,7 +5,15 @@ import { useHistory } from "react-router-dom";
 import Cart from "../../assets/carrinho.svg";
 import imgDestaque from "../../assets/OFERTAS.svg";
 import { useCart } from "../../hooks/CartContext"; // Importe useCart aqui
-import { Container, ContainerItens, Image, ImageCart, Button,ImgEmphasis } from "./styles";
+import {
+  Container,
+  ContainerItens,
+  Image,
+  ImageCart,
+  Button,
+  ImgEmphasis,
+  ContainerCategory,
+} from "./styles";
 import Carousel from "react-elastic-carousel";
 
 export function OffersCarousel() {
@@ -39,32 +47,33 @@ export function OffersCarousel() {
 
   return (
     <Container>
-      <ImgEmphasis src={imgDestaque} alt="foto do produto" />
-      <Carousel
-        itemsToShow={5}
-        style={{ width: "90%" }}
-        breakPoints={breakPoints}
-        pagination={true} // Oculta a paginação
-        showArrows={true} // Oculta as setas de navegação
-        itemPadding={[0, 5]}
-      >
-        {products.map((product) => (
-          
-          <ContainerItens key={product.id}>
-            <Image src={product.url} alt="foto do produto" />
-            <p> {product.name}</p>
-            <p> {product.formatedPrice}</p>
-            <Button
-              onClick={() => {
-                putProductInCart(product);
-                push("/carrinho");
-              }}
-            >
-              Alugar <ImageCart src={Cart} alt="Carrinho de compra" />
-            </Button>
-          </ContainerItens>
-        ))}
-      </Carousel>
+      <ContainerCategory>
+        <ImgEmphasis src={imgDestaque} alt="foto do produto" />
+        <Carousel
+          itemsToShow={5}
+          style={{ width: "90%" }}
+          breakPoints={breakPoints}
+          pagination={true} // Oculta a paginação
+          showArrows={true} // Oculta as setas de navegação
+          itemPadding={[0, 5]}
+        >
+          {products.map((product) => (
+            <ContainerItens key={product.id}>
+              <Image src={product.url} alt="foto do produto" />
+              <p> {product.name}</p>
+              <p> {product.formatedPrice}</p>
+              <Button
+                onClick={() => {
+                  putProductInCart(product);
+                  push("/carrinho");
+                }}
+              >
+                Alugar <ImageCart src={Cart} alt="Carrinho de compra" />
+              </Button>
+            </ContainerItens>
+          ))}
+        </Carousel>
+      </ContainerCategory>
     </Container>
   );
 }
