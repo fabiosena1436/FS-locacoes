@@ -15,6 +15,7 @@ export const Container = styled.div`
  .gCgsXv {
     background-color: rgb(9 9 9 / 50%);
     box-shadow: 0 0 1px 3px rgb(3 3 3);
+    display: none;
 }
 `;
 

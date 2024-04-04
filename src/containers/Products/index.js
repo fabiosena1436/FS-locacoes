@@ -61,7 +61,7 @@ function Products({ location: { state } }) {
         <Container>
             <ProductsCarousel />
             <Carousel itemsToShow={15} breakPoints={[
-                { width: 1, itemsToShow: 4 }, // 1 px de largura (todos os dispositivos)
+                { width: 1, itemsToShow: 3 }, // 1 px de largura (todos os dispositivos)
                 { width: 400, itemsToShow: 3 }, // 400px e acima (dispositivos maiores)
                 { width: 800, itemsToShow: 15 } // 800px e acima (dispositivos ainda maiores)
             ]}>
