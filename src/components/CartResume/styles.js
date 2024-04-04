@@ -8,7 +8,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top:30px;
+  margin-top: 30px;
 
   .container-top {
     display: grid;
@@ -38,14 +38,30 @@ export const Container = styled.div`
     .delivery-tax-price {
       grid-area: delivery-tax-price;
     }
+
+    @media screen and (max-width: 768px) {
+      h2 {
+        font-size: 1.8;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
   }
 
-.container-bottom{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  font-size: 24px;
-  margin-top: 50px;
-}
-  
+  .container-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 24px;
+    margin-top: 50px;
+  }
+
+  @media screen and (max-width: 768px) {
+
+      p {
+        font-size: 1.3rem;
+      }
+    }
 `;

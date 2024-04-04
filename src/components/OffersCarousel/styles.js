@@ -30,7 +30,11 @@ export const Container = styled.div`
     gap: 15px;
     .rec.rec-arrow {
       display: none;
-    
+    }
+
+    .gCgsXv {
+      background-color: rgb(14 14 14 / 50%);
+      box-shadow: 0 0 1px 3px rgb(12 12 12);
     }
   }
 `;
@@ -71,7 +75,6 @@ export const ContainerItens = styled.div`
       height: 8vw;
     }
     padding: 20px 10px;
-    
   }
 `;
 export const Image = styled.img`
@@ -81,7 +84,6 @@ export const Image = styled.img`
 
   @media screen and (max-width: 768px) {
     width: 35vw;
-    
   }
 `;
 

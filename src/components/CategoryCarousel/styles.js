@@ -29,8 +29,14 @@ export const Container = styled.div`
     color: #efefef;
   }
 
+  .gCgsXv {  
+    background-color: rgb(14 14 14 / 50%);
+    box-shadow: 0 0 1px 3px rgb(12 12 12); 
+}
+
   @media screen and (max-width: 768px) {
     background-color:#efefef;
+    padding: 10px 0;
   }
 `;
 
