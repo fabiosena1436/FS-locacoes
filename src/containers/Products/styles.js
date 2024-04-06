@@ -85,8 +85,6 @@ export const ProductsContainer = styled.div`
   @media screen and (max-width: 768px) {
     grid-template-columns: repeat(2, 0fr);
     gap: 10px;
-    display: flex;
-    flex-direction: column;
     .lgnkSX {
       padding: 8px;
     }
