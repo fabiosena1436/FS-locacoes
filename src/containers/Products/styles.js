@@ -84,7 +84,7 @@ export const ProductsContainer = styled.div`
   margin-top: 20px;
 
   @media screen and (max-width: 768px) {
-    grid-template-columns: repeat(1, 0fr);
+    grid-template-columns: repeat(2, 0fr);
     gap: 10px;
 
     .lgnkSX {
