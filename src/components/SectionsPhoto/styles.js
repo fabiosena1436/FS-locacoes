@@ -13,7 +13,7 @@ export const Container = styled.div`
   @media screen and (max-width: 768px) {
     h1 {
       margin: 20px 0;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
      
     }
   }
