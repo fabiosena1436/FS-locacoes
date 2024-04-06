@@ -17,11 +17,13 @@ export const Container = styled.div`
     box-shadow: 0 0 1px 3px rgb(3 3 3);
     display: none;
   }
+
   @media screen and (max-width: 768px) {
-    .cQZIKn {
+    .cQXjKx{
       display: none;
     }
   }
+ 
 `;
 
 export const ProductsImg = styled.img`
@@ -40,6 +42,7 @@ export const CategoryButton = styled.button`
   margin-top: 40px;
   @media screen and (max-width: 768px) {
     font-size: 0.8rem;
+
   }
 `;
 export const CategoriesMenu = styled.div`
