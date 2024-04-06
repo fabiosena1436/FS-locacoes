@@ -1,18 +1,21 @@
 import React from "react";
 
-import { CategoryCarousel,  HomeCarousel, OffersCarousel } from "../../components";
+import {
+  CategoryCarousel,
+  HomeCarousel,
+  OffersCarousel,
+} from "../../components";
 
-import { Container } from './styles'
-
+import { Container } from "./styles";
 
 function Home() {
-    return (
-        <Container>
-            <HomeCarousel />
-            <CategoryCarousel />
-            <OffersCarousel />
-    
-        </Container>)
+  return (
+    <Container>
+      <HomeCarousel />
+      <OffersCarousel />
+      <CategoryCarousel />
+    </Container>
+  );
 }
 
-export default Home
+export default Home;

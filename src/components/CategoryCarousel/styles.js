@@ -64,7 +64,7 @@ export const CategoryImg = styled.img`
 
 export const ContainerItens = styled.div`
   background-color: #ffff;
-  padding: 20px;
+  padding: 0 10px;
   border-radius: 10px;
   transition: 0.5s ease;
 
@@ -78,7 +78,7 @@ export const Image = styled.img`
   width: 200px;
   border-radius: 5px;
   @media screen and (max-width: 768px) {
-    width: 35vw;
+    width: 40vw;
   }
 `;
 
@@ -109,7 +109,7 @@ export const Button = styled(Link)`
   @media screen and (max-width: 768px) {
     width: 100%;
     font-size: 15px;
-
+    margin-bottom: 16px;
     flex-direction: column;
   }
 `;
