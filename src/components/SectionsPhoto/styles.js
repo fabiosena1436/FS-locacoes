@@ -8,7 +8,7 @@ export const ContainerImage = styled.div`
 display: flex;
 width: 80vh;
  img{
-  width: 100px;
+  width: 50px;
  }
 
   @media screen and (max-width: 768px) {
