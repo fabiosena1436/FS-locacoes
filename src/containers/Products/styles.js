@@ -105,7 +105,7 @@ export const ProductsContainer = styled.div`
 
     .cGVoGD {
       /* consfiguração da imagem */
-      width: 115px;
+      width: 140px;
     }
     .hQouLH {
       width: 149.81px;
