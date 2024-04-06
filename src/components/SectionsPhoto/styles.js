@@ -6,7 +6,7 @@ export const Container = styled.div`
 
 export const ContainerImage = styled.div`
 display: flex;
-
+width: 80vh;
  img{
   width: 100px;
  }
