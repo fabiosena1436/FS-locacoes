@@ -23,11 +23,9 @@ export const ContainerImage = styled.div`
   margin: 0 auto;
 
   @media (max-width: 767px) {
-    width: 100%;
+    width: 80%;
     padding-bottom: 25px;
 
-    .slick-arrow{
-      display: none;
-    }
+    
   }
 `;
