@@ -56,6 +56,7 @@ export const Container = styled.div`
 
 export const CategoryImg = styled.img`
   width: 15%;
+ 
 `;
 export const ImageCart = styled.img`
   width: 10%;
@@ -115,9 +116,11 @@ export const Image = styled.img`
 
 export const ImgEmphasis = styled.img`
   width: 13vw;
+  margin: 34px;
 
   @media screen and (max-width: 768px) {
     width: 130px;
+    margin: 13px;
   }
 `;
 export const Button = styled.button`

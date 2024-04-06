@@ -54,7 +54,7 @@ export const Container = styled.div`
 
 export const CategoryImg = styled.img`
   width: 15vw;
-  margin-top: 40px;
+  margin: 40px;
 
   @media screen and (max-width: 768px) {
     width: 150px;

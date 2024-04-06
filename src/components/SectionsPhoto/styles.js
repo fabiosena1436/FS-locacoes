@@ -9,7 +9,6 @@ export const Container = styled.div`
 
 export const ContainerImage = styled.div`
   display: flex;
-  width: 80vh;
   justify-content: center;
   gap: 46px;
   img {
