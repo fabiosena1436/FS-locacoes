@@ -13,6 +13,7 @@ function Home() {
     <Container>
       <HomeCarousel />
       <OffersCarousel />
+      <SectionsPhoto />
       <CategoryCarousel />
     </Container>
   );
