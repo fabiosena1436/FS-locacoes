@@ -14,7 +14,6 @@ import formatCurrency from '../../utils/formatCurrency'
 import { CardProduct } from "../../components/index";
 
 function Products({ location: { state } }) {
-
     let categoryId = 0;
     if (state?.categoryId) {
         categoryId = state.categoryId;
@@ -64,7 +63,7 @@ function Products({ location: { state } }) {
                 { width: 1, itemsToShow: 3 }, // 1 px de largura (todos os dispositivos)
                 { width: 400, itemsToShow: 3 }, // 400px e acima (dispositivos maiores)
                 { width: 800, itemsToShow: 15 } // 800px e acima (dispositivos ainda maiores)
-            ]}>
+            ]} renderArrow={() => <></>}>
                 {categories.map(category => (
                     <CategoryButton
                         key={category.id}
