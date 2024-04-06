@@ -87,6 +87,7 @@ export const ProductsContainer = styled.div`
     gap: 10px;
 
     .lgnkSX {
+      /* configuração do container */
       display: flex;
       padding: 20px 0 20px;
       flex-direction: column;
@@ -94,7 +95,13 @@ export const ProductsContainer = styled.div`
     }
 
     .cGVoGD {
+      /* consfiguração da imagem */
       width: 115px;
+    }
+    .hQouLH {
+      width: 149.81px;
+      height: 30.129px;
+      /* configuraçao do botão */
     }
   }
 `;
