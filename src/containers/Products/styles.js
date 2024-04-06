@@ -23,9 +23,7 @@ export const Container = styled.div`
       display: none;
     }
 
-    .cQXjKx:disabled{
-      display: none;
-    }
+   
   }
  
 `;
