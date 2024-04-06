@@ -18,6 +18,11 @@ export const Container = styled.div`
     display: none;
   }
 
+  .llDoiR:hover,
+  .llDoiR:focus {
+    box-shadow: rgb(22 22 22 / 50%) 0px 0px 1px 3px;
+  }
+
   @media screen and (max-width: 768px) {
     .cQZIKn {
       display: none;
@@ -35,6 +40,12 @@ export const Container = styled.div`
       height: 1px;
       width: 1px;
       box-shadow: rgb(15 15 16) 0px 0px 1px 3px;
+    }
+
+    .llDoiR {
+      height: 1px;
+      width: 1px;
+      box-shadow: rgb(9 9 9 / 50%) 0px 0px 1px 2px;
     }
   }
 `;
