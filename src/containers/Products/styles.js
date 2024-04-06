@@ -13,14 +13,14 @@ export const Container = styled.div`
   }
 
   .gCgsXv {
-    background-color: rgb(9 9 9 / 50%);
-    box-shadow: 0 0 1px 3px rgb(3 3 3);
+    background-color: #000000;
+ 
     display: none;
   }
 
   .llDoiR:hover,
   .llDoiR:focus {
-    box-shadow: rgb(22 22 22 / 50%) 0px 0px 1px 3px;
+   background-color: #000000;
   }
 
   @media screen and (max-width: 768px) {
@@ -31,21 +31,21 @@ export const Container = styled.div`
     .hIaoYK:hover,
     .hIaoYK:focus {
       cursor: pointer;
-      box-shadow: rgb(11 10 11) 0px 0px 1px 3px;
+      background-color: #000000;
     }
 
     .hIaoYK {
-      background-color: rgb(23 23 24 / 50%);
+      background-color: #000000;
       font-size: 1.3em;
       height: 1px;
       width: 1px;
-      box-shadow: rgb(15 15 16) 0px 0px 1px 3px;
+      
     }
 
     .llDoiR {
       height: 1px;
       width: 1px;
-      box-shadow: rgb(9 9 9 / 50%) 0px 0px 1px 2px;
+      background-color: #000000;
     }
   }
 `;
