@@ -6,11 +6,15 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
 
+  h1{
+    margin-top: 20px;
+  }
+
   @media screen and (max-width: 768px) {
     h1 {
       margin: 20px 0;
       font-size: 0.8rem;
-      margin-top: 20px;
+     
     }
   }
 `;
