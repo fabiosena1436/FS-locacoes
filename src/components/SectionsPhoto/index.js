@@ -10,6 +10,7 @@ export function SectionsPhoto() {
 
   return (
     <Container>
+      <h1>A arte de decorar esta dentro de cada um de nós</h1>
       <ContainerImage>
       <img src={Photo1} alt="img-geleria" />
       <img src={Photo2} alt="img-geleria" />
