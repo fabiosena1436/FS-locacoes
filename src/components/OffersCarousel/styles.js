@@ -99,6 +99,7 @@ export const ContainerItens = styled.div`
     .hIaoYK {
       height: 1px;
       width: 1px;
+      
     }
   }
 `;
