@@ -18,9 +18,14 @@ export const ImageSlidev = styled.img`
 
 export const ContainerImage = styled.div`
   width: 60%;
-margin: 0 auto ;
+  margin: 0 auto;
+
   @media (max-width: 767px) {
     width: 100%;
     padding-bottom: 25px;
+
+    .slick-next:before {
+      display: none;
+    }
   }
 `;

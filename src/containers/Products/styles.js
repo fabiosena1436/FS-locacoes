@@ -88,7 +88,6 @@ export const ProductsContainer = styled.div`
     gap: 10px;
 
     .lgnkSX {
-     
       padding: 8px;
       
     }
