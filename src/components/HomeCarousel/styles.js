@@ -29,5 +29,8 @@ export const ContainerImage = styled.div`
     width: 100%;
     padding-bottom: 25px;
 
+    .itemSlide {
+      display: none;
+    }
   }
 `;
