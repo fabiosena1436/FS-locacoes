@@ -86,5 +86,11 @@ export const ProductsContainer = styled.div`
   @media screen and (max-width: 768px) {
     grid-template-columns: repeat(1, 0fr);
     gap: 10px;
+
+    .lgnkSX {
+     
+      padding: 8px;
+      
+    }
   }
 `;
