@@ -1,12 +1,10 @@
 import styled from "styled-components";
 
-
 export const ContainerCategory = styled.div`
   width: 80vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 
   @media screen and (max-width: 768px) {
     .fJHrVW {
@@ -85,15 +83,23 @@ export const ContainerItens = styled.div`
     color: #424242;
   }
 
-  @media screen and (max-width: 768px) {
+  .hIaoYK {
+    background-color: rgb(4 1 9);
+    box-shadow: rgb(9 9 9) 0px 0px 1px 3px;
+  }
 
+  @media screen and (max-width: 768px) {
     padding: 20px 10px;
     p {
       font-size: 0.8rem;
       text-align: center;
       height: 8vw;
     }
-   
+
+    .hIaoYK {
+      height: 1px;
+      width: 1px;
+    }
   }
 `;
 export const Image = styled.img`
