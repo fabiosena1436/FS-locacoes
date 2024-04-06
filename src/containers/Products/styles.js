@@ -14,13 +14,13 @@ export const Container = styled.div`
 
   .gCgsXv {
     background-color: #000000;
- 
+
     display: none;
   }
 
   .llDoiR:hover,
   .llDoiR:focus {
-   background-color: #000000;
+    background-color: #000000;
   }
 
   @media screen and (max-width: 768px) {
@@ -39,7 +39,6 @@ export const Container = styled.div`
       font-size: 1.3em;
       height: 1px;
       width: 1px;
-      
     }
 
     .llDoiR {
@@ -86,10 +85,10 @@ export const ProductsContainer = styled.div`
   @media screen and (max-width: 768px) {
     grid-template-columns: repeat(2, 0fr);
     gap: 10px;
-
+    display: flex;
+    flex-direction: column;
     .lgnkSX {
       padding: 8px;
-      
     }
   }
 `;
