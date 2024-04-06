@@ -1,8 +1,8 @@
 import React from "react";
-import Photo1 from '../../assets/gareria1.jpeg'
-import Photo2 from '../../assets/gareria2.jpeg'
-import Photo3 from '../../assets/gareria3.jpeg'
-import Photo4 from '../../assets/gareria4.jpeg'
+import Photo1 from '../../assets/gareria1.png'
+import Photo2 from '../../assets/gareria2.png'
+import Photo3 from '../../assets/gareria3.png'
+import Photo4 from '../../assets/gareria4.png'
 
 import { Container, ContainerImage } from "./styles";
 
