@@ -86,12 +86,14 @@ export const ContainerItens = styled.div`
   }
 
   @media screen and (max-width: 768px) {
+
+    padding: 20px 10px;
     p {
       font-size: 0.8rem;
       text-align: center;
       height: 8vw;
     }
-    padding: 20px 10px;
+   
   }
 `;
 export const Image = styled.img`

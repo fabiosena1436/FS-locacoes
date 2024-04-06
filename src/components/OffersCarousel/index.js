@@ -4,7 +4,7 @@ import formatCurrency from "../../utils/formatCurrency";
 import { useHistory } from "react-router-dom";
 import Cart from "../../assets/carrinho.svg";
 import imgDestaque from "../../assets/OFERTAS.svg";
-import { useCart } from "../../hooks/CartContext"; // Importe useCart aqui
+import { useCart } from "../../hooks/CartContext"; 
 import {
   Container,
   ContainerItens,

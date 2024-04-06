@@ -64,7 +64,7 @@ export const CategoryImg = styled.img`
 
 export const ContainerItens = styled.div`
   background-color: #ffff;
-  padding: 0 10px;
+  padding: 0 12px;
   border-radius: 10px;
   transition: 0.5s ease;
 
@@ -78,7 +78,7 @@ export const Image = styled.img`
   width: 200px;
   border-radius: 5px;
   @media screen and (max-width: 768px) {
-    width: 40vw;
+    width: 38vw;
   }
 `;
 
