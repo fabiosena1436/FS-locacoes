@@ -19,7 +19,7 @@ export const Container = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    .cQXjKx{
+    .cQZIKn{
       display: none;
     }
 
