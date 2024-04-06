@@ -85,12 +85,12 @@ export const ProductsContainer = styled.div`
   @media screen and (max-width: 768px) {
     grid-template-columns: repeat(2, 0fr);
     gap: 10px;
-   
+
     .lgnkSX {
+      display: flex;
       padding: 8px;
       flex-direction: column;
-    align-items: center;
-    
+      align-items: center;
     }
   }
 `;
