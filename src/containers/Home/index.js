@@ -4,6 +4,7 @@ import {
   CategoryCarousel,
   HomeCarousel,
   OffersCarousel,
+  SectionsPhoto,
 } from "../../components";
 
 import { Container } from "./styles";
