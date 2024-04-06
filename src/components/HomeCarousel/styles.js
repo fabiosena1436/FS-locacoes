@@ -3,11 +3,6 @@ import styled from "styled-components";
 export const SliderConatainer = styled.div`
   display: flex;
   justify-content: center;
-  @media (max-width: 767px) {
-    .slick-arrow .slick-next {
-      display: none;
-    }
-  }
 `;
 
 export const ImageSlidev = styled.img`
@@ -29,8 +24,9 @@ export const ContainerImage = styled.div`
     width: 100%;
     padding-bottom: 25px;
 
-    .itemSlide {
-      display: none;
+    .slick-prev,
+    .slick-next {
+      display: none !important; 
     }
   }
 `;

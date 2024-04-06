@@ -20,12 +20,13 @@ export function HomeCarousel() {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 8000,
+        arrows: false,
     };
 
     return (
         <div style={{backgroundColor:'#ffffff'}}>
             <ContainerImage>
-                <Slider {...settings} className='itemSlide'>
+                <Slider {...settings} className='itemSlide' >
                     <SliderConatainer>
                         <ImageSlidev src={ImageSlid} alt="imagem home" />
                     </SliderConatainer>
