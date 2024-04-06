@@ -88,9 +88,13 @@ export const ProductsContainer = styled.div`
 
     .lgnkSX {
       display: flex;
-      padding: 8px;
+      padding: 20px 0 20px;
       flex-direction: column;
       align-items: center;
+    }
+
+    .cGVoGD {
+      width: 115px;
     }
   }
 `;
