@@ -3,8 +3,6 @@ import styled from "styled-components";
 export const SliderConatainer = styled.div`
   display: flex;
   justify-content: center;
-
-  
 `;
 
 export const ImageSlidev = styled.img`
@@ -25,9 +23,9 @@ export const ContainerImage = styled.div`
   @media (max-width: 767px) {
     width: 100%;
     padding-bottom: 25px;
-    .slick-arrow{
+
+    .slick-arrow .slick-next {
       display: none;
     }
-    
   }
 `;
