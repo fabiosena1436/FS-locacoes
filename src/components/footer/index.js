@@ -29,7 +29,8 @@ export function Footer() {
                 </FooterimgDiv>
                 <SbFooterLinksDiv>
                     <SocialMedea>
-                        <a href="https://www.instagram.com/fernandosennats/" target="blank"><img src={what} alt="img what" /></a>
+                        <a href="https://api.whatsapp.com/send?phone=5518981088723&text=
+              Olá! gistaria de saber mais sobre as locações."target="blank"><img src={what} alt="img what" /></a>
                         <a href="https://www.instagram.com/fernandosennats/" target="blank"><img src={insta} alt="img insta" /></a>
                         <a href="https://www.facebook.com/profile.php?id=100002660650656&ref=xav_ig_profile_web" target="blank"><img src={face} alt="img face" /></a>
                     </SocialMedea>
