@@ -5,7 +5,9 @@ export const Container = styled.div`
 `;
 
 export const ContainerImage = styled.div`
- width: 50px;
+ img{
+  width: 200px;
+ }
 
   @media screen and (max-width: 768px) {
  
