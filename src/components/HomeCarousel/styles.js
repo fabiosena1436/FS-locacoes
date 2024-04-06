@@ -23,7 +23,7 @@ export const ContainerImage = styled.div`
   margin: 0 auto;
 
   @media (max-width: 767px) {
-    width: 80%;
+    width: 100%;
     padding-bottom: 25px;
 
     
