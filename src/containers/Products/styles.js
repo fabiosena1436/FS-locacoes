@@ -83,6 +83,7 @@ export const ProductsContainer = styled.div`
   margin-top: 20px;
 
   @media screen and (max-width: 768px) {
+    display: grid;
     grid-template-columns: repeat(2, 0fr);
     gap: 10px;
     flex-direction: column;
