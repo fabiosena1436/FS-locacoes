@@ -101,7 +101,13 @@ export const ProductsContainer = styled.div`
     .hQouLH {
       width: 149.81px;
       height: 30.129px;
+      margin: 0 10px;
       /* configuraçao do botão */
+    }
+
+    .daBCsl {
+      /* configuração do price */
+      margin: 9px;
     }
   }
 `;
