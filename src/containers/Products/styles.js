@@ -22,6 +22,10 @@ export const Container = styled.div`
     .cQXjKx{
       display: none;
     }
+
+    .cQXjKx:disabled{
+      display: none;
+    }
   }
  
 `;
