@@ -18,6 +18,16 @@ export const Container = styled.div`
     display: none;
   }
 
+  .hIaoYK {
+    background-color: #000000;
+    
+}
+
+.hIaoYK:hover, .hIaoYK:focus {
+
+    box-shadow: rgb(26 26 27) 0px 0px 1px 3px;
+}
+
   .llDoiR:hover,
   .llDoiR:focus {
     background-color: #000000;
@@ -35,7 +45,6 @@ export const Container = styled.div`
     }
 
     .hIaoYK {
-      background-color: #000000;
       font-size: 1.3em;
       height: 1px;
       width: 1px;
