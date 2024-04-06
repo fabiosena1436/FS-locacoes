@@ -6,6 +6,10 @@ export const ContainerCategory = styled.div`
   flex-direction: column;
   align-items: center;
 
+  .hIaoYK {
+    background-color: rgb(9 9 9);
+  }
+
   @media screen and (max-width: 768px) {
     .fJHrVW {
       display: flex;
@@ -56,7 +60,6 @@ export const Container = styled.div`
 
 export const CategoryImg = styled.img`
   width: 15%;
- 
 `;
 export const ImageCart = styled.img`
   width: 10%;
@@ -100,7 +103,6 @@ export const ContainerItens = styled.div`
     .hIaoYK {
       height: 1px;
       width: 1px;
-      
     }
   }
 `;
