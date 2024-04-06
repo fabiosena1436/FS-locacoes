@@ -24,9 +24,9 @@ export const ContainerImage = styled.div`
     width: 100%;
     padding-bottom: 25px;
 
-    .slick-prev,
-    .slick-next {
-      display: none !important; 
+    .slick-next,
+    .slick-prev {
+      width: 0px;
     }
   }
 `;
