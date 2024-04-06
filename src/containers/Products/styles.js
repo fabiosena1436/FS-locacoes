@@ -19,13 +19,24 @@ export const Container = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    .cQZIKn{
+    .cQZIKn {
       display: none;
     }
 
-   
+    .hIaoYK:hover,
+    .hIaoYK:focus {
+      cursor: pointer;
+      box-shadow: rgb(11 10 11) 0px 0px 1px 3px;
+    }
+
+    .hIaoYK {
+      background-color: rgb(23 23 24 / 50%);
+      font-size: 1.3em;
+      height: 1px;
+      width: 1px;
+      box-shadow: rgb(15 15 16) 0px 0px 1px 3px;
+    }
   }
- 
 `;
 
 export const ProductsImg = styled.img`
@@ -44,7 +55,6 @@ export const CategoryButton = styled.button`
   margin-top: 40px;
   @media screen and (max-width: 768px) {
     font-size: 0.8rem;
-
   }
 `;
 export const CategoriesMenu = styled.div`
