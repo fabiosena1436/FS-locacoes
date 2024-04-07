@@ -18,10 +18,11 @@ function Routes() {
                 <Route component={Login} path="/login" />
                 <Route component={Register} path="/cadastro" />
               <Route component={Register} path="/" />
-                
-                <PrivateRoouter  component={Products} path="/produtos" />
+              <Route component={Register} path="/about" />
+                <Route component={Register} path="/produtos" />
+            
                 <PrivateRoouter  component={Cart} path="/carrinho" />
-                <PrivateRoouter  component={About} path="/about" />
+                
                 <PrivateRoouter  component={Admin} path={paths.Order} isAdmin/>
                 <PrivateRoouter  component={Admin} path={paths.Products} isAdmin/>
                 <PrivateRoouter  component={Admin} path={paths.NewProduct} isAdmin/>
