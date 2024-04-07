@@ -48,7 +48,7 @@ export function OffersCarousel() {
   return (
     <Container>
       <ContainerCategory>
-        <ImgEmphasis src={imgDestaque} alt="foto do produto" />
+        <ImgEmphasis src={imgDestaque} alt="foto dole destaque" />
         <Carousel
           itemsToShow={5}
           style={{ width: "90%" }}

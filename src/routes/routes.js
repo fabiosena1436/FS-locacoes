@@ -17,7 +17,8 @@ function Routes() {
             <Switch>
                 <Route component={Login} path="/login" />
                 <Route component={Register} path="/cadastro" />
-                <PrivateRoouter exact component={Home} path="/" />
+              <Route component={Register} path="/" />
+                
                 <PrivateRoouter  component={Products} path="/produtos" />
                 <PrivateRoouter  component={Cart} path="/carrinho" />
                 <PrivateRoouter  component={About} path="/about" />
