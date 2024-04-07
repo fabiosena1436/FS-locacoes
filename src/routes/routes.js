@@ -12,24 +12,24 @@ import Admin from "../containers/Admin";
 import paths from "../constants/paths";
 
 function Routes() {
-    return (
-        <Router>
-            <Switch>
-                <Route component={Login} path="/login" />
-                <Route component={Register} path="/cadastro" />
-              <Route component={Register} path="/" />
-              <Route component={Register} path="/about" />
-                <Route component={Register} path="/produtos" />
-            
-                <PrivateRoouter  component={Cart} path="/carrinho" />
-                
-                <PrivateRoouter  component={Admin} path={paths.Order} isAdmin/>
-                <PrivateRoouter  component={Admin} path={paths.Products} isAdmin/>
-                <PrivateRoouter  component={Admin} path={paths.NewProduct} isAdmin/>
-                <PrivateRoouter  component={Admin} path={paths.EditProduct} isAdmin/>
-            </Switch>
-        </Router>
-    )
+  return (
+    <Router>
+      <Switch>
+        <Route component={Login} path="/login" />
+        <Route component={Register} path="/cadastro" />
+        <Route component={Home} path="/" />
+        <Route component={About} path="/about" />
+        <Route component={Products} path="/produtos" />
+
+        <PrivateRoouter component={Cart} path="/carrinho" />
+
+        <PrivateRoouter component={Admin} path={paths.Order} isAdmin />
+        <PrivateRoouter component={Admin} path={paths.Products} isAdmin />
+        <PrivateRoouter component={Admin} path={paths.NewProduct} isAdmin />
+        <PrivateRoouter component={Admin} path={paths.EditProduct} isAdmin />
+      </Switch>
+    </Router>
+  );
 }
 
 export default Routes;
