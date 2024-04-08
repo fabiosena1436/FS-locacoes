@@ -7,6 +7,7 @@ import { useCart } from "../../hooks/CartContext";
 import {
   Container,
   ContainerItens,
+  Description,
   Image,
   ImageCart,
   Button,
@@ -46,7 +47,9 @@ export function OffersCarousel() {
   return (
     <Container>
       <ContainerCategory>
-        <h1>Destaques</h1>
+        <Description>
+          <h1>Destaques</h1>
+        </Description>
         <Carousel
           itemsToShow={5}
           style={{ width: "90%" }}

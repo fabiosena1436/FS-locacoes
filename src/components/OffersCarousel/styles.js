@@ -6,9 +6,7 @@ export const ContainerCategory = styled.div`
   flex-direction: column;
   align-items: center;
 
-  h1{
-    width: 1.5rem;
-  }
+ 
 
   .hIaoYK {
     background-color: rgb(9 9 9);
@@ -28,6 +26,13 @@ export const ContainerCategory = styled.div`
       flex-direction: row;
       width: 100vw;
     }
+  }
+`;
+
+export const Description = styled.div`
+  h1{
+    width: 1.5rem;
+    margin-bottom:20px;
   }
 `;
 export const Container = styled.div`
