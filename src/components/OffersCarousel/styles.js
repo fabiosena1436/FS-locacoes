@@ -32,6 +32,7 @@ export const Description = styled.div`
   h1 {
     width: 1.5rem;
     margin-bottom: 20px;
+    text-align: center;
   }
 `;
 export const Container = styled.div`
