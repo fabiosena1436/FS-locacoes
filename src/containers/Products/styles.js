@@ -25,7 +25,7 @@ export const Container = styled.div`
 
 .hIaoYK:hover, .hIaoYK:focus {
 
-    box-shadow: rgb(26 26 27) 0px 0px 1px 3px;
+    box-shadow: none;
 }
 
   .llDoiR:hover,

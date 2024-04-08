@@ -8,6 +8,9 @@ export const ContainerCategory = styled.div`
 
   .hIaoYK {
     background-color: rgb(9 9 9);
+    box-shadow: none;
+    height: 5px;
+    width: 5px;
   }
 
   @media screen and (max-width: 768px) {
@@ -15,7 +18,14 @@ export const ContainerCategory = styled.div`
       display: flex;
       flex-direction: row;
       width: 100vw;
+
     }
+
+    .hIaoYK {
+   
+    height: 5px;
+    width: 5px;
+  }
   }
 `;
 export const Container = styled.div`
