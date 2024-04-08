@@ -43,7 +43,7 @@ export function Header() {
                     <img src={Logo} alt="carrinho" />
                     <PageLink onClick={() => push('/')} isActive={pathname === '/'} >Home</PageLink>
                     <PageLink onClick={() => push('/produtos')} isActive={pathname.includes('produtos')}>Produtos</PageLink>
-                    <PageLink onClick={() => push('/about')} isActive={pathname === 'about'} >Sobre</PageLink>
+                    <PageLink onClick={() => push('/about')} isActive={pathname.includes('about')} >Sobre</PageLink>
                 </ContainerLeft>
 
                 <ContainerRight>

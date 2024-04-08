@@ -8,6 +8,8 @@ export function About() {
 
   return (
     <Container>
+
+      
       <ContainerText>
         <h1>Nossa historia</h1>
         <p>
