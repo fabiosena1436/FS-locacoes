@@ -30,7 +30,7 @@ export const ContainerCategory = styled.div`
 export const Description = styled.div`
   width: 100vw;
   h1 {
-    width: 1.5rem;
+    font-size: 20px;
     margin-bottom: 20px;
     text-align: center;
   }
