@@ -19,7 +19,7 @@ function Routes() {
         <Route component={Register} path="/cadastro" />
        
         <PrivateRoouter component={Cart} path="/carrinho" />
-        <PrivateRoouter component={Home} path="/" />
+        <PrivateRoouter exact component={Home} path="/" />
         <PrivateRoouter component={About} path="/about" />
         <PrivateRoouter component={Products} path="/produtos" />
 
