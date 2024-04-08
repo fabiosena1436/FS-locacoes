@@ -20,6 +20,7 @@ export const Container = styled.div`
 
   .hIaoYK {
     background-color: #000000;
+    box-shadow: none;
     
 }
 
