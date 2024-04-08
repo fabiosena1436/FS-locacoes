@@ -33,9 +33,7 @@ export const ContainerImage = styled.div`
     grid-template-columns: repeat(2, 0fr);
     gap: 15px;
     img {
-      width: 15vw;
-      padding: 81px 0;
-      width: 155px;
+      width: 45vw;
       padding: 4px 0px;
     }
   }

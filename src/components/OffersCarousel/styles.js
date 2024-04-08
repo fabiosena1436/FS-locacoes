@@ -130,7 +130,7 @@ export const ImgEmphasis = styled.img`
 
   @media screen and (max-width: 768px) {
     width: 33vw;
-    margin: 13px;
+    margin: 13px 0;
   }
 `;
 export const Button = styled.button`
