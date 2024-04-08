@@ -39,6 +39,19 @@ export const ContainerCategory = styled.div`
     }
   }
 `;
+
+export const Description = styled.div`
+  width: 100vw;
+  h1 {
+    font-size: 2.6rem;
+    margin-bottom: 20px;
+    text-align: center;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1.6rem;
+  }
+  }
+`;
 export const Container = styled.div`
   background-color: #ffffff;
   display: flex;
