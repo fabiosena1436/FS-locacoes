@@ -6,8 +6,6 @@ export const ContainerCategory = styled.div`
   flex-direction: column;
   align-items: center;
 
- 
-
   .hIaoYK {
     background-color: rgb(9 9 9);
     box-shadow: none;
@@ -30,9 +28,10 @@ export const ContainerCategory = styled.div`
 `;
 
 export const Description = styled.div`
-  h1{
+  width: 100vw;
+  h1 {
     width: 1.5rem;
-    margin-bottom:20px;
+    margin-bottom: 20px;
   }
 `;
 export const Container = styled.div`
@@ -132,7 +131,6 @@ export const Image = styled.img`
     width: 35vw;
   }
 `;
-
 
 export const Button = styled.button`
   margin-top: 16px;
