@@ -7,6 +7,30 @@ export const ContainerCategory = styled.div`
   flex-direction: column;
   align-items: center;
 
+  .hIaoYK {
+    background-color: rgb(12 12 12);
+    height: 5px;
+    width: 5px;
+    box-shadow: none;
+  }
+
+  .hIaoYK:hover,
+  .hIaoYK:focus {
+    cursor: pointer;
+    box-shadow: rgb(12 12 12) 0px 0px 1px 3px;
+  }
+
+  .llDoiR {
+    height: 5px;
+    width: 5px;
+    box-shadow: rgb(0 0 0) 0px 0px 1px 2px;
+  }
+
+  .hIaoYK:hover,
+  .hIaoYK:focus {
+    box-shadow: none;
+  }
+
   @media screen and (max-width: 768px) {
     .fJHrVW {
       display: flex;

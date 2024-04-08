@@ -46,14 +46,15 @@ export const Container = styled.div`
 
     .hIaoYK {
       font-size: 1.3em;
-      height: 1px;
-      width: 1px;
+      height: 5px;
+      width: 5px;
     }
 
     .llDoiR {
-      height: 1px;
-      width: 1px;
+      height: 5px;
+      width: 5px;
       background-color: #000000;
+      box-shadow: none;
     }
   }
 `;

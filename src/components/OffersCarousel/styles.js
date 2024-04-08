@@ -13,19 +13,17 @@ export const ContainerCategory = styled.div`
     width: 5px;
   }
 
+  .llDoiR {
+    height: 5px;
+    width: 5px;
+  }
+
   @media screen and (max-width: 768px) {
     .fJHrVW {
       display: flex;
       flex-direction: row;
       width: 100vw;
-
     }
-
-    .hIaoYK {
-   
-    height: 5px;
-    width: 5px;
-  }
   }
 `;
 export const Container = styled.div`
@@ -131,7 +129,7 @@ export const ImgEmphasis = styled.img`
   margin: 34px;
 
   @media screen and (max-width: 768px) {
-    width: 130px;
+    width: 33vw;
     margin: 13px;
   }
 `;
