@@ -127,6 +127,7 @@ export const Image = styled.img`
 export const ImgEmphasis = styled.img`
   width: 13vw;
   margin: 34px;
+  padding: 10px;
 
   @media screen and (max-width: 768px) {
     width: 33vw;
