@@ -3,7 +3,6 @@ import api from "../../services/api";
 import formatCurrency from "../../utils/formatCurrency";
 import { useHistory } from "react-router-dom";
 import Cart from "../../assets/carrinho.svg";
-import imgDestaque from "../../assets/OFERTAS.svg";
 import { useCart } from "../../hooks/CartContext"; 
 import {
   Container,
@@ -11,7 +10,6 @@ import {
   Image,
   ImageCart,
   Button,
-  ImgEmphasis,
   ContainerCategory,
 } from "./styles";
 import Carousel from "react-elastic-carousel";
@@ -48,7 +46,7 @@ export function OffersCarousel() {
   return (
     <Container>
       <ContainerCategory>
-        <ImgEmphasis src={imgDestaque} alt="foto dole destaque" />
+        <h1>Destaques</h1>
         <Carousel
           itemsToShow={5}
           style={{ width: "90%" }}

@@ -6,6 +6,10 @@ export const ContainerCategory = styled.div`
   flex-direction: column;
   align-items: center;
 
+  h1{
+    width: 1.5rem;
+  }
+
   .hIaoYK {
     background-color: rgb(9 9 9);
     box-shadow: none;
@@ -124,16 +128,7 @@ export const Image = styled.img`
   }
 `;
 
-export const ImgEmphasis = styled.img`
-  width: 13vw;
-  margin: 34px;
-  padding: 10px;
 
-  @media screen and (max-width: 768px) {
-    width: 33vw;
-    margin: 13px 0;
-  }
-`;
 export const Button = styled.button`
   margin-top: 16px;
   background-color: #fa4e3c;
