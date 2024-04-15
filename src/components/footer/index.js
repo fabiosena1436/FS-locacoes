@@ -38,7 +38,7 @@ export function Footer() {
                 <SbFooterLinksDiv>
                     <h4>Contato</h4>
                     <p>Fone: (18) 981088723 </p>
-                    <p>Email: fernandosenna2009@hotmail.com</p>
+                    <p>Email: casasenna@hotmail.com</p>
                     <p>Horario de funcionamento:</p>
                     <p>Segunda a Sexta das 08h às 18:00h </p>
                     <p>Sábado 08h às 12h</p>
