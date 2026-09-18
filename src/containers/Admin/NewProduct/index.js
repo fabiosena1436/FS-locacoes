@@ -14,7 +14,7 @@ import { toast } from "react-toastify";
 
 function NewProduct() {
   const [fileName, setFileName] = useState(null);
-  const [categories, setCategories] = useState(null);
+  const [categories, setCategories] = useState([]);
   const { push } = useHistory();
 
   const schema = Yup.object().shape({
@@ -23,11 +23,13 @@ function NewProduct() {
     category: Yup.object().required("Escolha uma categoria"),
     file: Yup.mixed()
       .test("required", "Carregue uma imagem", (value) => {
-        return value?.length > 0;
+        return value && value.length > 0;
       })
-      .test("type", "Carregue apenas aquivos JPEG", (value) => {
+      .test("type", "Carregue apenas arquivos JPEG ou PNG", (value) => {
         return (
-          value[0]?.type === "image/jpeg" || value[0]?.type === "image/png"
+          value &&
+          value[0] &&
+          (value[0].type === "image/jpeg" || value[0].type === "image/png")
         );
       }),
   });
@@ -42,26 +44,17 @@ function NewProduct() {
   });
 
   const onSubmit = async (data) => {
-    const productDataFomData = new FormData();
+    const productFormData = new FormData();
 
-    productDataFomData.append("name", data.name);
-    productDataFomData.append("price", data.price);
-    productDataFomData.append("category_id", data.category.id);
-    productDataFomData.append("file", data.file[0]);
+    productFormData.append("name", data.name);
+    productFormData.append("price", data.price);
+    productFormData.append("category_id", data.category.id);
+    productFormData.append("file", data.file[0]);
 
-    await toast.promise(api.post("products", productDataFomData), {
+    await toast.promise(api.post("products", productFormData), {
       pending: "Criando novo produto...",
       success: "Produto criado com sucesso",
       error: "Falha ao criar o produto",
-      file: Yup.mixed()
-      .test("required", "Carregue uma imagem", (value) => {
-        return value?.length > 0;
-      })
-      .test("type", "Carregue apenas aquivos JPEG", (value) => {
-        return (
-          value[0]?.type === "image/jpeg" || value[0]?.type === "image/png"
-        );
-      }),
     });
 
     setTimeout(() => {
@@ -71,9 +64,12 @@ function NewProduct() {
 
   useEffect(() => {
     async function loadCategories() {
-      const { data } = await api.get("categories");
-
-      setCategories(data);
+      try {
+        const { data } = await api.get("categories");
+        setCategories(data);
+      } catch (err) {
+        console.error("Erro ao carregar categorias", err);
+      }
     }
 
     loadCategories();
@@ -96,8 +92,9 @@ function NewProduct() {
           <Label>Preço</Label>
           <Input
             type="number"
+            step="0.01"
             {...register("price")}
-            placeholder="Digite o valor do porduto"
+            placeholder="Digite o valor do produto"
           />
           <ErrorMessage>{errors.price?.message}</ErrorMessage>
         </div>
@@ -114,8 +111,8 @@ function NewProduct() {
               type="file"
               accept="image/png, image/jpeg"
               {...register("file")}
-              onChange={(value) => {
-                setFileName(value.target.files[0]?.name);
+              onChange={(e) => {
+                setFileName(e.target.files[0]?.name);
               }}
             />
           </LabelUpload>
@@ -136,11 +133,11 @@ function NewProduct() {
                 />
               );
             }}
-          ></Controller>
+          />
           <ErrorMessage>{errors.category?.message}</ErrorMessage>
         </div>
 
-        <ButtonStyles>Adicionar produto</ButtonStyles>
+        <ButtonStyles type="submit">Adicionar produto</ButtonStyles>
       </form>
     </Container>
   );

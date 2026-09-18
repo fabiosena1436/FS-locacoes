@@ -1,91 +1,152 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import Carousel from 'react-elastic-carousel';
+import Carousel from "react-elastic-carousel";
 
 import {
-    Container,
-    CategoryButton,
-    ProductsContainer
-} from './styles'
+  Container,
+  CategoryButton,
+  ProductsContainer,
+} from "./styles";
 
 import ProductsCarousel from "../../components/HomeCarousel";
-import api from '../../services/api'
-import formatCurrency from '../../utils/formatCurrency'
+import api from "../../services/api";
+import formatCurrency from "../../utils/formatCurrency";
 import { CardProduct } from "../../components/index";
 
 function Products({ location: { state } }) {
-    let categoryId = 0;
-    if (state?.categoryId) {
-        categoryId = state.categoryId;
+  let categoryId = 0;
+  if (state?.categoryId) {
+    categoryId = state.categoryId;
+  }
+
+  const [categories, setCategories] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [activeCategory, setActiveCategory] = useState(categoryId);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  useEffect(() => {
+    async function loadCategories() {
+      try {
+        const { data } = await api.get("categories");
+        const newCategories = [{ id: 0, name: "Todos" }, ...data];
+        setCategories(newCategories);
+      } catch (err) {
+        console.error("Erro ao carregar categorias", err);
+      }
     }
 
-    const [categories, setCategories] = useState([]);
-    const [products, setProducts] = useState([]);
-    const [filteredProducts, setFilteredProducts] = useState([]);
-    const [activeCategory, setActiveCategory] = useState(categoryId);
+    async function loadProducts() {
+      try {
+        const { data: allProducts } = await api.get("products");
 
-    useEffect(() => {
-        async function loadCategories() {
-            const { data } = await api.get('categories');
+        const formattedProducts = allProducts.map((product) => {
+          return { ...product, formatedPrice: formatCurrency(product.price) };
+        });
 
-            const newCategories = [{ id: 0, name: 'Todos' }, ...data];
-            setCategories(newCategories);
-        }
+        setProducts(formattedProducts);
+      } catch (err) {
+        console.error("Erro ao carregar produtos", err);
+      }
+    }
+    loadProducts();
+    loadCategories();
+  }, []);
 
-        async function loadProducts() {
-            const { data: allProducts } = await api.get('products');
+  useEffect(() => {
+    let result = products;
 
-            const newPoducts = allProducts.map(product => {
-                return { ...product, formatedPrice: formatCurrency(product.price) };
-            });
+    if (activeCategory !== 0) {
+      result = result.filter(
+        (product) => product.category_id === activeCategory
+      );
+    }
 
-            setProducts(newPoducts);
-        }
-        loadProducts();
-        loadCategories();
-    }, []);
+    if (searchQuery.trim() !== "") {
+      const term = searchQuery.toLowerCase();
+      result = result.filter((product) =>
+        product.name.toLowerCase().includes(term)
+      );
+    }
 
-    useEffect(() => {
-        if (activeCategory === 0) {
-            setFilteredProducts(products);
-        } else {
-            const newFilteredProduct = products.filter(
-                product => product.category_id === activeCategory
-            );
-            setFilteredProducts(newFilteredProduct);
-        }
-    }, [activeCategory, products]);
+    setFilteredProducts(result);
+  }, [activeCategory, products, searchQuery]);
 
-    return (
-        <Container>
-            <ProductsCarousel />
-            <Carousel itemsToShow={15} breakPoints={[
-                { width: 1, itemsToShow: 3 }, // 1 px de largura (todos os dispositivos)
-                { width: 400, itemsToShow: 3 }, // 400px e acima (dispositivos maiores)
-                { width: 800, itemsToShow: 15 } // 800px e acima (dispositivos ainda maiores)
-            ]} renderArrow={() => <></>}>
-                {categories.map(category => (
-                    <CategoryButton
-                        key={category.id}
-                        type="button"
-                        isActiveCategory={activeCategory === category.id}
-                        onClick={() => setActiveCategory(category.id)}
-                    >
-                        {category.name}
-                    </CategoryButton>
-                ))}
-            </Carousel>
-            <ProductsContainer>
-                {filteredProducts.map(product => (
-                    <CardProduct key={product.id} product={product} />
-                ))}
-            </ProductsContainer>
-        </Container>
-    );
+  return (
+    <Container>
+      <ProductsCarousel />
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "20px",
+          padding: "0 20px",
+        }}
+      >
+        <input
+          type="text"
+          placeholder="Buscar produto pelo nome..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          style={{
+            width: "100%",
+            maxWidth: "500px",
+            padding: "12px 20px",
+            fontSize: "16px",
+            borderRadius: "25px",
+            border: "1px solid #ddd",
+            boxShadow: "0 2px 5px rgba(0,0,0,0.05)",
+            outline: "none",
+          }}
+        />
+      </div>
+
+      <Carousel
+        itemsToShow={15}
+        breakPoints={[
+          { width: 1, itemsToShow: 3 },
+          { width: 400, itemsToShow: 3 },
+          { width: 800, itemsToShow: 15 },
+        ]}
+        renderArrow={() => <></>}
+      >
+        {categories.map((category) => (
+          <CategoryButton
+            key={category.id}
+            type="button"
+            isActiveCategory={activeCategory === category.id}
+            onClick={() => setActiveCategory(category.id)}
+          >
+            {category.name}
+          </CategoryButton>
+        ))}
+      </Carousel>
+
+      <ProductsContainer>
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((product) => (
+            <CardProduct key={product.id} product={product} />
+          ))
+        ) : (
+          <div
+            style={{
+              gridColumn: "1 / -1",
+              textAlign: "center",
+              padding: "40px",
+              color: "#777",
+            }}
+          >
+            Nenhum produto encontrado.
+          </div>
+        )}
+      </ProductsContainer>
+    </Container>
+  );
 }
 
 Products.propTypes = {
-    location: PropTypes.object
-}
+  location: PropTypes.object,
+};
 
 export default Products;

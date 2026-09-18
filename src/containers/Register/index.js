@@ -7,7 +7,7 @@ import * as Yup from "yup";
 import { toast } from "react-toastify";
 
 import logo from "../../assets/logo2.svg";
-import RegisterImg from "../../assets/conta1.svg";
+import RegisterImg from "../../assets/conta1.webp";
 import { Button, ErrorMessage } from "../../components";
 import api from "../../services/api";
 import {

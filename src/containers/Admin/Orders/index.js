@@ -5,29 +5,29 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-
 import Paper from "@mui/material/Paper";
 
 import { Container, Menu, LinkMenu } from "./styles";
-
 import status from "./orders-status";
 import api from "../../../services/api";
 import Row from "./row";
-import formateDate from "../../../utils/formatDate";
-
+import formatDate from "../../../utils/formatDate";
 
 function Orders() {
   const [orders, setOrders] = useState([]);
   const [filteredOrders, setFilteredOrders] = useState([]);
-  const [activeStatus, setActiveStatus] = useState([1]);
+  const [activeStatus, setActiveStatus] = useState(1);
   const [rows, setRows] = useState([]);
 
   useEffect(() => {
     async function loadOrders() {
-      const { data } = await api.get("orders");
-
-      setOrders(data);
-      setFilteredOrders(data);
+      try {
+        const { data } = await api.get("orders");
+        setOrders(data);
+        setFilteredOrders(data);
+      } catch (err) {
+        console.error("Erro ao carregar pedidos", err);
+      }
     }
 
     loadOrders();
@@ -35,53 +35,42 @@ function Orders() {
 
   function createData(order) {
     return {
-      name: order.user.name,
+      name: order.user?.name || "Cliente",
       orderId: order._id,
-      date: formateDate(order.createdAt),
+      date: formatDate(order.createdAt),
       status: order.status,
-      products: order.products,
+      products: order.products || [],
     };
   }
+
   useEffect(() => {
     const newRows = filteredOrders.map((ord) => createData(ord));
     setRows(newRows);
   }, [filteredOrders]);
 
-  useEffect(() => {
-    if (activeStatus === 1) {
+  function handleStatus(statusItem) {
+    if (statusItem.id === 1) {
       setFilteredOrders(orders);
     } else {
-      const statusIndex = status.findIndex((sts) => sts.id === activeStatus);
-      if (statusIndex !== -1) {
-        const newFilteredOrders = orders.filter(
-          (order) => order.status === status[statusIndex].value
-        );
-        setFilteredOrders(newFilteredOrders);
-      }
-    }
-  }, [orders, activeStatus, status]);
-
-  function handleStatus(status) {
-    if (status.id === 1) {
-      setFilteredOrders(orders);
-    } else {
-      const newOrders = orders.filter((order) => order.status === status.value);
+      const newOrders = orders.filter(
+        (order) => order.status === statusItem.value
+      );
       setFilteredOrders(newOrders);
     }
-    setActiveStatus(status.id);
+    setActiveStatus(statusItem.id);
   }
 
   return (
     <Container>
       <Menu>
         {status &&
-          status.map((status) => (
+          status.map((statusItem) => (
             <LinkMenu
-              key={status.id}
-              onClick={() => handleStatus(status)}
-              isActiveStatus={activeStatus === status.id}
+              key={statusItem.id}
+              onClick={() => handleStatus(statusItem)}
+              isActiveStatus={activeStatus === statusItem.id}
             >
-              {status.label}
+              {statusItem.label}
             </LinkMenu>
           ))}
       </Menu>
