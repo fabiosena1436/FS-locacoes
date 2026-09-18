@@ -21,16 +21,16 @@ import { toast } from "react-toastify";
 
 function EditProduct() {
   const [fileName, setFileName] = useState(null);
-  const [categories, setCategories] = useState(null);
+  const [categories, setCategories] = useState([]);
 
-  const {
-    push,
-    location: {
-      state: { product },
-    },
-  } = useHistory();
+  const history = useHistory();
+  const product = history.location?.state?.product;
 
-
+  useEffect(() => {
+    if (!product) {
+      history.push("/listar-produtos");
+    }
+  }, [product, history]);
 
   const schema = Yup.object().shape({
     name: Yup.string().required("Digite o nome do produto"),
@@ -49,34 +49,44 @@ function EditProduct() {
   });
 
   const onSubmit = async (data) => {
-    const productDataFomData = new FormData();
+    const productFormData = new FormData();
 
-    productDataFomData.append("name", data.name);
-    productDataFomData.append("price", data.price);
-    productDataFomData.append("category_id", data.category.id);
-    productDataFomData.append("file", data.file[0]);
-    productDataFomData.append("offer", data.offer);
+    productFormData.append("name", data.name);
+    productFormData.append("price", data.price);
+    productFormData.append("category_id", data.category.id);
+    if (data.file && data.file[0]) {
+      productFormData.append("file", data.file[0]);
+    }
+    productFormData.append("offer", data.offer);
 
-    await toast.promise(api.put(`products/${product.id}`, productDataFomData), {
-      pending: "Editando o produto ...",
-      success: "Produto editado com sucesso",
-      error: "Falha ao editar o produto",
-    });
+    await toast.promise(
+      api.put(`products/${product.id}`, productFormData),
+      {
+        pending: "Editando o produto...",
+        success: "Produto editado com sucesso",
+        error: "Falha ao editar o produto",
+      }
+    );
 
     setTimeout(() => {
-      push("/listar-produtos");
+      history.push("/listar-produtos");
     }, 1500);
   };
 
   useEffect(() => {
     async function loadCategories() {
-      const { data } = await api.get("categories");
-
-      setCategories(data);
+      try {
+        const { data } = await api.get("categories");
+        setCategories(data);
+      } catch (err) {
+        console.error("Erro ao carregar categorias", err);
+      }
     }
 
     loadCategories();
   }, []);
+
+  if (!product) return null;
 
   return (
     <Container>
@@ -95,6 +105,7 @@ function EditProduct() {
           <Label>Preço</Label>
           <Input
             type="number"
+            step="0.01"
             {...register("price")}
             defaultValue={product.price}
           />
@@ -105,7 +116,7 @@ function EditProduct() {
             {fileName || (
               <>
                 <CloudUploadIcon />
-                Carregue a imagem do produto
+                Trocar imagem do produto (opcional)
               </>
             )}
 
@@ -113,8 +124,8 @@ function EditProduct() {
               type="file"
               accept="image/png, image/jpeg"
               {...register("file")}
-              onChange={(value) => {
-                setFileName(value.target.files[0]?.name);
+              onChange={(e) => {
+                setFileName(e.target.files[0]?.name);
               }}
             />
           </LabelUpload>
@@ -137,7 +148,7 @@ function EditProduct() {
                 />
               );
             }}
-          ></Controller>
+          />
           <ErrorMessage>{errors.category?.message}</ErrorMessage>
         </div>
         <ContairneInput>
@@ -148,7 +159,7 @@ function EditProduct() {
           />
           <Label>Produto em destaque?</Label>
         </ContairneInput>
-        <ButtonStyles>Editar produto</ButtonStyles>
+        <ButtonStyles type="submit">Editar produto</ButtonStyles>
       </form>
     </Container>
   );

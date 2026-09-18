@@ -24,7 +24,10 @@ export function OffersCarousel() {
     async function loadProducts() {
       try {
         const { data } = await api.get("products");
-        const formattedProducts = data.map((product) => ({
+        const offerProducts = data.filter((product) => product.offer === true);
+        const productsToDisplay = offerProducts.length > 0 ? offerProducts : data;
+
+        const formattedProducts = productsToDisplay.map((product) => ({
           ...product,
           formatedPrice: formatCurrency(product.price),
         }));
@@ -54,8 +57,8 @@ export function OffersCarousel() {
           itemsToShow={5}
           style={{ width: "90%" }}
           breakPoints={breakPoints}
-          pagination={true} // Oculta a paginação
-          showArrows={true} // Oculta as setas de navegação
+          pagination={true}
+          showArrows={true}
           itemPadding={[0, 5]}
         >
           {products.map((product) => (

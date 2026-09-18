@@ -2,10 +2,10 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import ImageSlid from '../../assets/home-Header.svg'
-import ImageSlid1 from '../../assets/home-Header-1.svg'
-import ImageSlid2 from '../../assets/home-Header-2.svg'
-import ImageSlid3 from '../../assets/home-Header-3.svg'
+import ImageSlid from '../../assets/home-Header.webp'
+import ImageSlid1 from '../../assets/home-Header-1.webp'
+import ImageSlid2 from '../../assets/home-Header-2.webp'
+import ImageSlid3 from '../../assets/home-Header-3.webp'
 import {
     SliderConatainer,
     ImageSlidev,ContainerImage

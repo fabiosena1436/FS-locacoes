@@ -6,7 +6,7 @@ import * as Yup from "yup";
 
 import { toast } from "react-toastify";
 
-import LoginImg from "../../assets/login1.svg";
+import LoginImg from "../../assets/login1.webp";
 import logo from "../../assets/logo2.svg";
 import { Button, ErrorMessage } from "../../components";
 import { useUser } from "../../hooks/UserContext";
